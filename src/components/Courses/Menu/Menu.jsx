@@ -1,62 +1,81 @@
 import React from 'react';
-import { MenuBox } from './Menu.styled';
+import {
+  MenuBox,
+  ListItemStyled,
+  LogoTop,
+  LogoDown,
+  NavLinkStyled,
+} from './Menu.styled';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-
-import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
 
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import StoreIcon from '@mui/icons-material/Store';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import OutputIcon from '@mui/icons-material/Output';
 
-const style = {
-  width: '100%',
-  maxWidth: 260,
-  fontSize: '14',
-  bgcolor: 'rgba(55, 71, 79, 1)',
-  color: 'rgba(255, 255, 255, 0.72)',
-};
+import logodown from '../Menu/logodown.svg';
+import logotyp from '../Menu/logotyp.svg';
 
 const Menu = () => {
   return (
     <>
-      <Box sx={style}>
-        <Typography variant="h4" component="div">
-          logo
-        </Typography>
-        <Divider />
-        <List sx={style} component="nav" aria-label="mailbox folders">
-          <ListItem button>
-            <DashboardOutlinedIcon sx={{ fontSize: 24 }} />
+      <MenuBox>
+        <List component="nav" aria-label="mailbox folders">
+          <LogoTop src={logotyp} alt="logo" />
+          <Divider />
+          <ListItemStyled button>
+            <DashboardOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Dashboad" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Kursy" />
-          </ListItem>
-          <ListItem button>
+          </ListItemStyled>
+
+          <NavLinkStyled to="/courseplan">
+            <ListItemStyled button>
+              <VideoLibraryIcon sx={{ fontSize: 24, mr: '28px' }} />
+              <ListItemText primary="Kursy" />
+            </ListItemStyled>
+          </NavLinkStyled>
+
+          <ListItemStyled button>
+            <StoreIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Produkty" />
-          </ListItem>
-          <ListItem button>
+          </ListItemStyled>
+          <ListItemStyled button>
+            <GroupOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Użytkownicy" />
-          </ListItem>
-          <ListItem button>
+          </ListItemStyled>
+          <ListItemStyled button>
+            <CampaignIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Marketing" />
-          </ListItem>
-          <ListItem button>
+          </ListItemStyled>
+          <ListItemStyled button>
+            <AccountBalanceWalletOutlinedIcon
+              sx={{ fontSize: 24, mr: '28px' }}
+            />
             <ListItemText primary="Sprzedaż" />
-          </ListItem>
-          <ListItem button>
+          </ListItemStyled>
+          <ListItemStyled button>
+            <FolderOpenIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Repozytorium" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Wyloguj" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Nazwa firmy" />
-          </ListItem>
+          </ListItemStyled>
         </List>
-      </Box>
+
+        <List>
+          <ListItemStyled button>
+            <OutputIcon sx={{ fontSize: 24, mr: '28px' }} />
+            <ListItemText primary="Wyloguj" />
+          </ListItemStyled>
+          <ListItemStyled button>
+            <LogoDown src={logodown} alt="logo" />
+            <ListItemText primary="Nazwa firmy" />
+          </ListItemStyled>
+        </List>
+      </MenuBox>
     </>
   );
 };

@@ -8,7 +8,7 @@ const Main = () => {
         <div>
           <p>Kursy</p>
           <NavLink to="/newcourse">Dodaj kurs</NavLink>
-          <NavLink to="/courseplan">CoursePlan</NavLink>
+          {/* <NavLink to="/courseplan">CoursePlan</NavLink> */}
         </div>
       </div>
     </>
