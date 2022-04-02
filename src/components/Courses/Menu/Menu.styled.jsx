@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 import { NavLink } from 'react-router-dom';
@@ -27,7 +28,9 @@ export const MenuBox = styled(Box)`
   color: rgba(255, 255, 255, 0.72);
 `;
 export const LogoTop = styled.img`
-  margin: 24px 44px 24px 24px;
+  height: 32px;
+  width: 151px;
+  margin: 16px 44px 16px 24px;
   cursor: pointer;
 `;
 export const LogoDown = styled.img`
