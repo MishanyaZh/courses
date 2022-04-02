@@ -28,8 +28,12 @@ function YourCourses() {
         <TabPanel value="1">
           <CoursList />
         </TabPanel>
-        <TabPanel value="2">Nieaktywne · 7</TabPanel>
-        <TabPanel value="3">Wersje robocze · 4</TabPanel>
+        <TabPanel value="2">
+          <p>ups empty...</p>
+        </TabPanel>
+        <TabPanel value="3">
+          <p>ups empty...</p>
+        </TabPanel>
       </TabContext>
     </Box>
   );

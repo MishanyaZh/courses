@@ -20,7 +20,7 @@ import addCurse from '../Main/plus.svg';
 const Main = () => {
   return (
     <>
-      <Container>
+      <Container fixed style={{ maxWidth: '806px' }}>
         <BoxHeaderStyled>
           <Title align="left" variant="h2" fontSize={36}>
             Kursy

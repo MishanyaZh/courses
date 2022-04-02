@@ -28,7 +28,7 @@ export const NotificationsIconStyled = styled(NotificationsIcon)`
 `;
 
 export const Subtitle = styled(Typography)`
-  margin: 25px 0px 18px 0px;
+  margin: 25px 0px 6px 0px;
   color: #37474f;
   font-style: normal;
   font-weight: 700;
@@ -39,6 +39,7 @@ export const Subtitle = styled(Typography)`
 export const ButtonStyled = styled(Button)`
   width: 156px;
   height: 40px;
+  margin-top: 20px;
   background-color: rgba(0, 172, 193, 1);
   color: rgba(255, 255, 255, 1);
   font-style: normal;
