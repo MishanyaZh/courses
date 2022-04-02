@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-
+import { TabList } from '@mui/lab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 
 import { TabStyled } from './YourCourses.styled';
-import { TabList } from '@mui/lab';
+
+import CoursList from '../CoursList/CoursList';
 
 function YourCourses() {
   const [value, setValue] = useState('1');
@@ -25,9 +25,11 @@ function YourCourses() {
             <TabStyled label="Wersje robocze · 4" value="3" />
           </TabList>
         </Box>
-        <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
+        <TabPanel value="1">
+          <CoursList />
+        </TabPanel>
+        <TabPanel value="2">Nieaktywne · 7</TabPanel>
+        <TabPanel value="3">Wersje robocze · 4</TabPanel>
       </TabContext>
     </Box>
   );
