@@ -8,7 +8,7 @@ import { TabStyled } from './YourCourses.styled';
 
 import CoursList from '../CoursList/CoursList';
 
-function YourCourses() {
+const YourCourses = () => {
   const [value, setValue] = useState('1');
 
   const handleChange = (event, newValue) => {
@@ -19,13 +19,17 @@ function YourCourses() {
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <TabList
+            onChange={handleChange}
+            aria-label="lab API tabs example"
+            style={{}}
+          >
             <TabStyled label="Aktynwne · 12" value="1" />
             <TabStyled label="Nieaktywne · 7" value="2" />
             <TabStyled label="Wersje robocze · 4" value="3" />
           </TabList>
         </Box>
-        <TabPanel value="1">
+        <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList />
         </TabPanel>
         <TabPanel value="2">
@@ -37,6 +41,6 @@ function YourCourses() {
       </TabContext>
     </Box>
   );
-}
+};
 
 export default YourCourses;

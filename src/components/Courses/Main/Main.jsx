@@ -25,7 +25,7 @@ const Main = () => {
           <Title align="left" variant="h2" fontSize={36}>
             Kursy
           </Title>
-          <Stack spacing={3} direction="row">
+          <Stack spacing={3} direction="row" style={{ color: 'violet' }}>
             <Badge badgeContent={2} margin-right={24} color="error">
               <EmailIconStyled />
             </Badge>

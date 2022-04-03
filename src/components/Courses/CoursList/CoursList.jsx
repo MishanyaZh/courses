@@ -1,4 +1,5 @@
 import React from 'react';
+import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -6,7 +7,7 @@ import Switch from '@mui/material/Switch';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
-import { SwitchStyled } from './CoursList.styled';
+import { CardTytle, Img, ImgBox } from './CoursList.styled';
 
 import { cardsData } from '../../../assets/cardsData';
 
@@ -22,23 +23,26 @@ const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  display: 'flex',
+  // justifyContent: 'space-between',
+  textAlign: 'start',
   color: theme.palette.text.secondary,
+  width: '758px',
 }));
 
-function CoursList() {
+const CoursList = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Stack spacing={2}>
         {cardsData.map(item => (
           <Item key={item.id}>
             <CardContent>
-              <div>
-                <img src={item.image} alt="#" />
-              </div>
+              <ImgBox>
+                <Img src={item.image} alt="#" />
+              </ImgBox>
               <RightCard>
                 <TopCard>
-                  <div>{item.title}</div>
+                  <CardTytle>{item.title}</CardTytle>
                   <Options>
                     <span>Publiczny</span>
                     <Switch
@@ -48,13 +52,14 @@ function CoursList() {
                       }}
                     />
                     <IconButton
-                      style={{ width: '40px', height: '40px' }}
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        marginRight: '24px',
+                      }}
                       aria-label="more"
                       id="long-button"
-                      //   aria-controls={open ? 'long-menu' : undefined}
-                      //   aria-expanded={open ? 'true' : undefined}
                       aria-haspopup="true"
-                      //   onClick={handleClick}
                     >
                       <MoreVertIcon
                         style={{
@@ -67,6 +72,7 @@ function CoursList() {
                     </IconButton>
                   </Options>
                 </TopCard>
+                <Divider />
                 <BottomCard>
                   <div>
                     <p>{item.date}</p>
@@ -96,6 +102,6 @@ function CoursList() {
       </Stack>
     </Box>
   );
-}
+};
 
 export default CoursList;
