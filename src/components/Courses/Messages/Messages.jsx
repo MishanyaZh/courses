@@ -1,4 +1,5 @@
 import React from 'react';
+import LastNews from '../LatestNews/LatestNews';
 import Avatar from '@mui/material/Avatar';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import {
@@ -60,6 +61,7 @@ const Messages = () => {
             wykorzystać punkty na bezpłatne konsultacje z naszym Conciergem!
           </String4>
         </VioletBox>
+        <LastNews />
       </MessagesBox>
     </>
   );

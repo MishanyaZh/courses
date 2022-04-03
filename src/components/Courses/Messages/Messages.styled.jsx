@@ -46,6 +46,7 @@ export const BlueBox = styled.div`
   position: relative;
   width: 252px;
   height: 149px;
+  margin-top: 24px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${blue});
@@ -96,6 +97,7 @@ export const LinkBox = styled.div`
 
 export const VioletBox = styled.div`
   position: relative;
+  margin-top: 24px;
   width: 252px;
   height: 231px;
   background-size: contain;
