@@ -38,7 +38,7 @@ const Main = () => {
 
         <BoxHeaderStyled>
           <Subtitle>Twoje kursy</Subtitle>
-          <NavLinkStyled to="/newcourse">
+          <NavLinkStyled to="newcourse">
             <ButtonStyled variant="contained">
               <Logobutton src={addCurse} alt="logo" /> Dodaj kurs
             </ButtonStyled>
