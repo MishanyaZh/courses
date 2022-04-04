@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 253px;
+  margin-bottom: 27px;
+`;
+
 export const ListBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,6 +23,7 @@ export const Subtitle = styled.div`
   line-height: 1.21;
   color: #37474f;
   & span {
+    margin-left: 4px;
     color: #00acc1;
   }
 `;

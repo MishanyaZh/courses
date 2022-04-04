@@ -24,7 +24,7 @@ export const MenuBox = styled(Box)`
 
   width: 100%;
   min-height: 100vh;
-  max-height: 1122px;
+  max-height: auto;
   font-size: '14px';
   color: rgba(255, 255, 255, 0.72);
 `;

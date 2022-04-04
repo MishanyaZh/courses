@@ -10,7 +10,7 @@ import NotFoundPage from './views/NotFoundPage';
 
 function App() {
   return (
-    <div>
+    <div style={{ maxWidth: '1366px', margin: '0 auto' }}>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Courses />} />
