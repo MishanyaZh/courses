@@ -1,11 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { CoursesBox } from '../Courses/Courses.styled';
+import MenuCoursesPlan from '../../components/CoursePlan/MenuCoursesPlan/MenuCoursesPlan';
 
 const CoursePlan = () => {
   return (
     <>
-      <NavLink to="/">◄ Kursy</NavLink>
-      <p>CoursePlan</p>
+      <CoursesBox>
+        <MenuCoursesPlan />
+      </CoursesBox>
     </>
   );
 };
