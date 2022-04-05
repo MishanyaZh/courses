@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import {
   MenuBox,
   ListItemStyled,
@@ -16,8 +15,6 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
-import { ArrowBack, Button } from '../../../views/NewCourse/NewCourse.styled';
-import { ButtonText } from './MenuCoursesPlan.styled';
 
 const MenuCoursesPlan = () => {
   return (
@@ -28,18 +25,6 @@ const MenuCoursesPlan = () => {
           component="nav"
           aria-label="mailbox folders"
         >
-          <NavLink style={{ padding: '0px' }} to="/">
-            <Button
-              style={{
-                width: '260px',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <ArrowBack style={{ marginLeft: '28px' }} />
-              <ButtonText>Kursy</ButtonText>
-            </Button>
-          </NavLink>
           <Divider />
           <ListItemStyled button>
             <DashboardOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />

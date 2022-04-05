@@ -13,6 +13,11 @@ export const ButtonColor = styled(Button)`
   width: 134px;
   height: 39px;
   margin-left: 24px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: 'Montserrat';
 `;
 export const ButtonWhite = styled(Button)`
   width: 90px;
@@ -20,4 +25,9 @@ export const ButtonWhite = styled(Button)`
   color: rgba(0, 172, 193, 1);
   border-radius: 40px;
   text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: 'Montserrat';
 `;

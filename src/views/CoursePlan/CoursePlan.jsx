@@ -1,14 +1,20 @@
 import React from 'react';
 
-import { CoursesBox } from '../Courses/Courses.styled';
 import MenuCoursesPlan from '../../components/CoursePlan/MenuCoursesPlan/MenuCoursesPlan';
+import Header from '../../components/CoursePlan/Header/Header';
+import Main from '../../components/CoursePlan/Main/Main';
+import { MainBox } from './CoursePlan.styled';
 
 const CoursePlan = () => {
   return (
     <>
-      <CoursesBox>
-        <MenuCoursesPlan />
-      </CoursesBox>
+      <div>
+        <Header />
+        <MainBox>
+          <MenuCoursesPlan />
+          <Main />
+        </MainBox>
+      </div>
     </>
   );
 };
