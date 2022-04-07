@@ -34,6 +34,7 @@ export const Autor = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
+  margin-right: 24px;
 
   color: #37474f;
 `;

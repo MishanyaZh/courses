@@ -7,7 +7,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Button from '@mui/material/Button';
 
 export const Title = styled(Typography)`
-  margin: 18px 0px 18px 0px;
+  margin: 18px 0px 18px 24px;
   color: #37474f;
   font-style: normal;
   font-weight: 800;

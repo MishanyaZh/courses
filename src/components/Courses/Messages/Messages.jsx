@@ -22,7 +22,7 @@ import {
   DividerB,
   String4,
 } from './Messages.styled';
-import jan from '../Messages/jan.svg';
+// import jan from '../Messages/jan.svg';
 import up from '../Messages/up.svg';
 import kub from '../Messages/kub.svg';
 
@@ -30,11 +30,11 @@ const Messages = () => {
   return (
     <>
       <MessagesBox>
-        <Autor>
+        {/* <Autor>
           <Avatar alt="Remy Sharp" src={jan} style={{ cursor: 'pointer' }} />
           <Name>Jan Kowalski</Name>
           <SelectStyled style={{ cursor: 'pointer' }} />
-        </Autor>
+        </Autor> */}
         <BlueBox>
           <SvgUp src={up} alt="#" />
           <TextBox>

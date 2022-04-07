@@ -20,16 +20,17 @@ import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import OutputIcon from '@mui/icons-material/Output';
 
 import logodown from '../Menu/logodown.svg';
-import logotyp from '../Menu/logotyp.svg';
 
 const Menu = () => {
   return (
     <>
       <MenuBox>
-        <List component="nav" aria-label="mailbox folders">
-          <LogoTop src={logotyp} alt="logo" />
-          <Divider />
-
+        {/* <Divider /> */}
+        <List
+          style={{ width: '260px' }}
+          component="nav"
+          aria-label="mailbox folders"
+        >
           <ListItemStyled button>
             <DashboardOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Dashboad" />

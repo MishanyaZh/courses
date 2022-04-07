@@ -20,22 +20,15 @@ import addCurse from '../Main/plus.svg';
 const Main = () => {
   return (
     <>
-      <Container fixed style={{ maxWidth: '806px', paddingBottom: '20px' }}>
-        <BoxHeaderStyled>
-          <Title align="left" variant="h2" fontSize={36}>
-            Kursy
-          </Title>
-          <Stack spacing={3} direction="row" style={{ color: 'violet' }}>
-            <Badge badgeContent={2} margin-right={24} color="error">
-              <EmailIconStyled />
-            </Badge>
-            <Badge badgeContent={6} color="error">
-              <NotificationsIconStyled />
-            </Badge>
-          </Stack>
-        </BoxHeaderStyled>
+      <Container
+        fixed
+        style={{
+          // maxWidth: '806px',
+          paddingBottom: '20px',
+          background: 'rgba(245, 247, 248, 0.6)',
+        }}
+      >
         <Divider />
-
         <BoxHeaderStyled>
           <Subtitle>Twoje kursy</Subtitle>
           <NavLinkStyled to="newcourse">

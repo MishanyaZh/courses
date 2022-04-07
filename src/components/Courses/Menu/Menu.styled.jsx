@@ -19,15 +19,12 @@ export const MenuBox = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(55, 71, 79, 1);
-  max-width: 260px;
-
-  width: 100%;
   min-height: 100vh;
-  max-height: auto;
-  font-size: '14px';
+  font-size: 14px;
+  background-color: rgba(55, 71, 79, 1);
   color: rgba(255, 255, 255, 0.72);
 `;
+
 export const LogoTop = styled.img`
   height: 32px;
   width: 151px;
