@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const CardContent = styled.div`
   display: flex;
-  /* flex-direction: column; */
   align-content: center;
   justify-content: space-between;
   align-items: center;
@@ -13,8 +12,9 @@ export const RightCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
 export const TopCard = styled.div`
-  min-width: 600px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,9 +38,8 @@ export const Options = styled.div`
 
 export const BottomCard = styled.div`
   display: flex;
-  min-width: 600px;
-  /* flex-direction: row; */
-  justify-content: space-between;
+  width: 600px;
+  justify-content: space-around;
 `;
 
 export const ImgBox = styled.div`

@@ -21,7 +21,11 @@ const MenuCoursesPlan = () => {
     <>
       <MenuBox style={{ background: '#B0BEC5' }}>
         <List
-          style={{ padding: '0px', color: 'rgba(55, 71, 79, 1)' }}
+          style={{
+            padding: '0px',
+            color: 'rgba(55, 71, 79, 1)',
+            width: '260px',
+          }}
           component="nav"
           aria-label="mailbox folders"
         >

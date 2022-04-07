@@ -1,22 +1,20 @@
 import React from 'react';
 import {
-  BoxHeaderStyled,
   EmailIconStyled,
   NotificationsIconStyled,
   Title,
 } from '../Main/Main.styled';
 import { LogoTop } from '../Menu/Menu.styled';
-import logotyp from '../Header/logotyp.svg';
-import jan from '../Header/jan.svg';
-import { Avatar, Badge, Divider, Stack } from '@mui/material';
+import { Avatar, Badge, Stack } from '@mui/material';
 import { Autor, Name, SelectStyled } from '../Messages/Messages.styled';
 import { BoxLogo, BoxTitle, HeaderBox } from './Header.styled';
+import logotyp from '../Header/logotyp.svg';
+import jan from '../Header/jan.svg';
 
 const Header = () => {
   return (
     <>
-      {/* <HeaderBox> */}
-      <HeaderBox style={{ width: '1366px' }}>
+      <HeaderBox>
         <BoxLogo>
           <LogoTop src={logotyp} alt="logo" />
         </BoxLogo>
@@ -39,8 +37,6 @@ const Header = () => {
           <SelectStyled style={{ cursor: 'pointer' }} />
         </Autor>
       </HeaderBox>
-      {/* <Divider /> */}
-      {/* </HeaderBox> */}
     </>
   );
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   MenuBox,
   ListItemStyled,
-  LogoTop,
   LogoDown,
   NavLinkStyled,
 } from './Menu.styled';
@@ -25,12 +24,12 @@ const Menu = () => {
   return (
     <>
       <MenuBox>
-        {/* <Divider /> */}
         <List
-          style={{ width: '260px' }}
+          style={{ width: '260px', paddingTop: '0px' }}
           component="nav"
           aria-label="mailbox folders"
         >
+          <Divider />
           <ListItemStyled button>
             <DashboardOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
             <ListItemText primary="Dashboad" />

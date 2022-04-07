@@ -22,19 +22,17 @@ export const MessagesBox = styled.div`
   flex-direction: column;
   align-items: center;
   min-width: 300px;
-  padding-top: 24px;
 `;
 
 export const Autor = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
-  margin-right: 24px;
+  margin-left: 108px;
 
   color: #37474f;
 `;
@@ -47,7 +45,6 @@ export const BlueBox = styled.div`
   position: relative;
   width: 252px;
   height: 149px;
-  margin-top: 24px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${blue});

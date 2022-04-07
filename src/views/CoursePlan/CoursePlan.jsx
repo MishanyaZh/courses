@@ -8,13 +8,11 @@ import { MainBox } from './CoursePlan.styled';
 const CoursePlan = () => {
   return (
     <>
-      <div>
-        <Header />
-        <MainBox>
-          <MenuCoursesPlan />
-          <Main />
-        </MainBox>
-      </div>
+      <Header />
+      <MainBox>
+        <MenuCoursesPlan />
+        <Main />
+      </MainBox>
     </>
   );
 };
