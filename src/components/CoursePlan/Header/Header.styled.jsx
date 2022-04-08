@@ -11,7 +11,7 @@ export const HeaderBox = styled.header`
 `;
 
 export const Descriptions = styled.div`
-  margin-left: 218px;
+  margin-left: 209px;
   margin-right: 40px;
   font-family: 'Montserrat';
   font-style: normal;

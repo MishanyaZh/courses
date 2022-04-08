@@ -28,7 +28,9 @@ const Header = () => {
         <Subtitle>UX Design od podstaw</Subtitle>
         <Descriptions>Zdobądź oznaczenie Smart Learning 󰋽 </Descriptions>
         <ButtonWhite variant="text">Podgląd</ButtonWhite>
-        <ButtonColor variant="contained">Publikuj</ButtonColor>
+        <ButtonColor style={{ marginRight: '24px' }} variant="contained">
+          Publikuj
+        </ButtonColor>
       </HeaderBox>
     </>
   );

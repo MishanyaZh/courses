@@ -6,6 +6,12 @@ import StatisticsCourse from '../StatisticsCourse/StatisticsCourse';
 import { Container } from '@mui/material';
 import { statisticsBread } from '../../../assets/breadcrumbsData';
 
+import { Divider } from '@mui/material';
+import {
+  Footer,
+  FooterContent,
+} from '../../../views/NewCourse/NewCourse.styled';
+
 const Main = () => {
   return (
     <>
@@ -19,9 +25,18 @@ const Main = () => {
       >
         <BreadcrumbsComponent
           breadData={statisticsBread}
-          title={'Statystyki'}
+          curent={'Statystyki'}
         />
         <StatisticsCourse />
+        <Footer style={{ marginTop: '67px' }}>
+          <Divider style={{ marginLeft: '24px' }} />
+          <FooterContent>
+            <div>© Learning Space</div>
+            <div>
+              Regulamin · Polityka prywatności · Polityka plików cookies
+            </div>
+          </FooterContent>
+        </Footer>
       </Container>
     </>
   );

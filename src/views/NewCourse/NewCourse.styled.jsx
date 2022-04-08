@@ -42,7 +42,7 @@ export const BoxMaim = styled.div`
 `;
 
 export const Footer = styled.footer`
-  width: 1314px;
+  /* width: 1314px; */
   height: 96px;
   margin-top: 80px;
   background: rgba(245, 247, 248, 0.6);

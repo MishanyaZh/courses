@@ -1,28 +1,40 @@
 import React from 'react';
 import StatisticForm from '../StatisticForm/StatisticForm';
+import {
+  Rating,
+  SoldCourses,
+  Row,
+  Chart,
+  CardsBox,
+  Statistic,
+  Column,
+  Progress,
+} from './StatisticsCourseList.styled';
 
 const StatisticsCourseList = () => {
   return (
-    <div>
+    <>
       <StatisticForm />
-      <div>
-        <div>box1</div>
-        <div>box2</div>
-        <div>box3</div>
-      </div>
-      <div>
-        <div>chart</div>
-        <div>
-          <dvi>box1</dvi>
-          <dvi>box2</dvi>
-          <dvi>box3</dvi>
-        </div>
-      </div>
-      <div>
-        <div>box1</div>
-        <div>box2</div>
-      </div>
-    </div>
+      <CardsBox>
+        <Row>
+          <SoldCourses>box1</SoldCourses>
+          <SoldCourses>box2</SoldCourses>
+          <Rating>box3</Rating>
+        </Row>
+        <Row>
+          <Chart>chart</Chart>
+          <Column>
+            <Statistic>box1</Statistic>
+            <Statistic>box2</Statistic>
+            <Statistic>box3</Statistic>
+          </Column>
+        </Row>
+        <Row>
+          <Progress>box1</Progress>
+          <Progress>box2</Progress>
+        </Row>
+      </CardsBox>
+    </>
   );
 };
 

@@ -38,7 +38,7 @@ const NewCourse = () => {
             <Form />
           </BoxMaim>
         </Maim>
-        <Footer>
+        <Footer style={{ width: '1314px' }}>
           <Divider style={{ marginLeft: '24px' }} />
           <FooterContent>
             <div>© Learning Space</div>
