@@ -15,6 +15,8 @@ import {
   Subtitle,
 } from './NewCourse.styled';
 
+import { newCourseBread } from '../../assets/breadcrumbsData';
+
 const NewCourse = () => {
   return (
     <>
@@ -29,7 +31,10 @@ const NewCourse = () => {
         </Header>
         <Maim>
           <BoxMaim>
-            <BreadcrumbsComponent />
+            <BreadcrumbsComponent
+              breadData={newCourseBread}
+              curent={'Dodaj nowy kurs'}
+            />
             <Form />
           </BoxMaim>
         </Maim>
