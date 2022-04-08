@@ -3,6 +3,9 @@ import Box from '@mui/material/Box';
 import { TabList } from '@mui/lab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
+
+import StatisticsCourseList from '../StatisticsCourseList/StatisticsCourseList';
+
 import { TabStyled } from '../../Courses/YourCourses/YourCourses.styled';
 
 const StatisticsCourse = () => {
@@ -21,13 +24,13 @@ const StatisticsCourse = () => {
             aria-label="lab API tabs example"
             style={{}}
           >
-            <TabStyled label="Aktynwne · 12" value="1" />
-            <TabStyled label="Nieaktywne · 7" value="2" />
-            <TabStyled label="Wersje robocze · 4" value="3" />
+            <TabStyled label="Kursy" value="1" />
+            <TabStyled label="Kursanci" value="2" />
+            <TabStyled label="Quizy i testy" value="3" />
           </TabList>
         </Box>
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
-          <p>ups empty...</p>
+          <StatisticsCourseList />
         </TabPanel>
         <TabPanel value="2">
           <p>ups empty...</p>

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import BreadcrumbsComponent from '../../NewCourse/Breadcrumbs/BreadcrumbsComponent';
+import StatisticsCourse from '../StatisticsCourse/StatisticsCourse';
 
-import { statisticsBread } from '../../../assets/breadcrumbsData';
 import { Container } from '@mui/material';
+import { statisticsBread } from '../../../assets/breadcrumbsData';
 
 const Main = () => {
   return (
@@ -20,7 +21,7 @@ const Main = () => {
           breadData={statisticsBread}
           title={'Statystyki'}
         />
-        {/* <StatisticsCourse /> */}
+        <StatisticsCourse />
       </Container>
     </>
   );
