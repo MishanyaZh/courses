@@ -22,11 +22,26 @@ export const Rating = styled(Paper)`
   margin-right: 24px;
 `;
 export const Chart = styled(Paper)`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   width: 653px;
   height: 400px;
   margin-right: 24px;
+  padding: 24px 20px 24px 24px;
 `;
 
+export const ChartDescription = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 export const Column = styled.div`
   display: flex;
   flex-direction: column;

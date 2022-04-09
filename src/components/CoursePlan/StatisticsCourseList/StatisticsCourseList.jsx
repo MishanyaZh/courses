@@ -1,4 +1,5 @@
 import React from 'react';
+import ChartBar from '../ChartBar/ChartBar';
 import StatisticForm from '../StatisticForm/StatisticForm';
 import {
   Rating,
@@ -9,6 +10,7 @@ import {
   Statistic,
   Column,
   Progress,
+  ChartDescription,
 } from './StatisticsCourseList.styled';
 
 const StatisticsCourseList = () => {
@@ -22,7 +24,16 @@ const StatisticsCourseList = () => {
           <Rating>box3</Rating>
         </Row>
         <Row>
-          <Chart>chart</Chart>
+          <Chart>
+            <ChartDescription>
+              <div>
+                <h2>Dochód</h2>
+                <div>6 599,99 zł</div>
+              </div>
+              <div>ten tydzień</div>
+            </ChartDescription>
+            <ChartBar />
+          </Chart>
           <Column>
             <Statistic>box1</Statistic>
             <Statistic>box2</Statistic>
