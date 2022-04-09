@@ -11,7 +11,16 @@ import {
   Column,
   Progress,
   ChartDescription,
+  Amount,
+  SoldCoursesText,
+  SoldCoursesToday,
 } from './StatisticsCourseList.styled';
+
+import green from '../StatisticsCourseList/green.jpg';
+import pink from '../StatisticsCourseList/pink.jpg';
+
+import NorthEastIcon from '@mui/icons-material/NorthEast';
+import SouthEastIcon from '@mui/icons-material/SouthEast';
 
 const StatisticsCourseList = () => {
   return (
@@ -19,8 +28,20 @@ const StatisticsCourseList = () => {
       <StatisticForm />
       <CardsBox>
         <Row>
-          <SoldCourses>box1</SoldCourses>
-          <SoldCourses>box2</SoldCourses>
+          <SoldCourses props={green}>
+            <Amount>693</Amount>
+            <SoldCoursesText>sprzedanych kursów</SoldCoursesText>
+            <SoldCoursesToday props={'green'}>
+              <NorthEastIcon style={{ height: '18px' }} /> 3 dzisiaj
+            </SoldCoursesToday>
+          </SoldCourses>
+          <SoldCourses props={pink}>
+            <Amount>396</Amount>
+            <SoldCoursesText>sprzedanych kursów</SoldCoursesText>
+            <SoldCoursesToday props={'pink'}>
+              <SouthEastIcon style={{ height: '18px' }} /> 3 dzisiaj
+            </SoldCoursesToday>
+          </SoldCourses>
           <Rating>box3</Rating>
         </Row>
         <Row>

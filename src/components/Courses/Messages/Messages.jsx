@@ -1,12 +1,8 @@
 import React from 'react';
 import LastNews from '../LatestNews/LatestNews';
-import Avatar from '@mui/material/Avatar';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import {
-  Autor,
   MessagesBox,
-  Name,
-  SelectStyled,
   RightIconStyled,
   BlueBox,
   SvgUp,
@@ -30,11 +26,6 @@ const Messages = () => {
   return (
     <>
       <MessagesBox>
-        {/* <Autor>
-          <Avatar alt="Remy Sharp" src={jan} style={{ cursor: 'pointer' }} />
-          <Name>Jan Kowalski</Name>
-          <SelectStyled style={{ cursor: 'pointer' }} />
-        </Autor> */}
         <BlueBox>
           <SvgUp src={up} alt="#" />
           <TextBox>
