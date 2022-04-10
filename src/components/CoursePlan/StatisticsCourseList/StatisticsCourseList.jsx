@@ -3,6 +3,7 @@ import ChartBar from '../ChartBar/ChartBar';
 import StatisticForm from '../StatisticForm/StatisticForm';
 import DynamicsCourses from '../DynamicsCourses/DynamicsCourses';
 import SoldCoursesList from '../SoldCoursesList/SoldCoursesList';
+import ActiveDiscussion from '../ActiveDiscussion/ActiveDiscussion';
 import {
   Rating,
   Row,
@@ -38,8 +39,8 @@ const StatisticsCourseList = () => {
           </Column>
         </Row>
         <Row>
-          <Progress>box1</Progress>
           <Progress>box2</Progress>
+          <ActiveDiscussion />
         </Row>
       </CardsBox>
     </>
