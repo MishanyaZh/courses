@@ -1,13 +1,13 @@
 import React from 'react';
 import ChartBar from '../ChartBar/ChartBar';
 import StatisticForm from '../StatisticForm/StatisticForm';
+import DynamicsCourses from '../DynamicsCourses/DynamicsCourses';
 import {
   Rating,
   SoldCourses,
   Row,
   Chart,
   CardsBox,
-  Statistic,
   Column,
   Progress,
   ChartDescription,
@@ -56,9 +56,7 @@ const StatisticsCourseList = () => {
             <ChartBar />
           </Chart>
           <Column>
-            <Statistic>box1</Statistic>
-            <Statistic>box2</Statistic>
-            <Statistic>box3</Statistic>
+            <DynamicsCourses />
           </Column>
         </Row>
         <Row>
