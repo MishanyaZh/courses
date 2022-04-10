@@ -2,25 +2,16 @@ import React from 'react';
 import ChartBar from '../ChartBar/ChartBar';
 import StatisticForm from '../StatisticForm/StatisticForm';
 import DynamicsCourses from '../DynamicsCourses/DynamicsCourses';
+import SoldCoursesList from '../SoldCoursesList/SoldCoursesList';
 import {
   Rating,
-  SoldCourses,
   Row,
   Chart,
   CardsBox,
   Column,
   Progress,
   ChartDescription,
-  Amount,
-  SoldCoursesText,
-  SoldCoursesToday,
 } from './StatisticsCourseList.styled';
-
-import green from '../StatisticsCourseList/green.jpg';
-import pink from '../StatisticsCourseList/pink.jpg';
-
-import NorthEastIcon from '@mui/icons-material/NorthEast';
-import SouthEastIcon from '@mui/icons-material/SouthEast';
 
 const StatisticsCourseList = () => {
   return (
@@ -28,20 +19,7 @@ const StatisticsCourseList = () => {
       <StatisticForm />
       <CardsBox>
         <Row>
-          <SoldCourses props={green}>
-            <Amount>693</Amount>
-            <SoldCoursesText>sprzedanych kursów</SoldCoursesText>
-            <SoldCoursesToday props={'green'}>
-              <NorthEastIcon style={{ height: '18px' }} /> 3 dzisiaj
-            </SoldCoursesToday>
-          </SoldCourses>
-          <SoldCourses props={pink}>
-            <Amount>396</Amount>
-            <SoldCoursesText>sprzedanych kursów</SoldCoursesText>
-            <SoldCoursesToday props={'pink'}>
-              <SouthEastIcon style={{ height: '18px' }} /> 3 dzisiaj
-            </SoldCoursesToday>
-          </SoldCourses>
+          <SoldCoursesList />
           <Rating>box3</Rating>
         </Row>
         <Row>
