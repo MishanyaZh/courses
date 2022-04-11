@@ -17,6 +17,8 @@ export const Statistic = styled(Paper)`
   background-image: ${imgs => `url(${imgs.imgs})`};
   background-position: ${position => position.position};
 
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04);
+
   &:last-child {
     margin-bottom: 0px;
   }

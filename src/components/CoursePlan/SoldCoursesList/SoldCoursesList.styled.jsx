@@ -11,6 +11,7 @@ export const SoldCourses = styled(Paper)`
   background-repeat: no-repeat;
   background-image: ${props => `url(${props.props})`};
   background-position: left 0px top 100px;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04);
 `;
 
 export const Amount = styled.div`

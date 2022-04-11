@@ -1,9 +1,13 @@
 import React from 'react';
-import { ActiveDiscussionList, Titile } from './ActiveDiscussion.styled';
+import {
+  ActiveDiscussionList,
+  TableCellItem,
+  TableCellTitle,
+  Titile,
+} from './ActiveDiscussion.styled';
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
@@ -12,10 +16,10 @@ const createData = (title, list) => {
 };
 
 const rows = [
-  createData('Frozen yoghurt', 24),
-  createData('Ice cream sandwich', 18),
-  createData('Eclair', 16),
-  createData('Cupcake', 10),
+  createData('Metody badawcze', 24),
+  createData('Metody badawcze', 18),
+  createData('Metody badawcze', 16),
+  createData('Metody badawcze', 10),
 ];
 
 const ActiveDiscussion = () => {
@@ -26,17 +30,15 @@ const ActiveDiscussion = () => {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell
-                style={{ padding: '10px 0px 0px 0px', fontSize: '12px' }}
-              >
+              <TableCellTitle style={{ padding: '10px 0px 0px 0px' }}>
                 tytuł
-              </TableCell>
-              <TableCell
+              </TableCellTitle>
+              <TableCellTitle
                 align="right"
-                style={{ padding: '10px 0px 0px 0px', fontSize: '12px' }}
+                style={{ padding: '10px 0px 0px 0px' }}
               >
                 lista postów
-              </TableCell>
+              </TableCellTitle>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,19 +47,19 @@ const ActiveDiscussion = () => {
                 key={row.title}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell
+                <TableCellItem
                   component="th"
                   scope="row"
-                  style={{ padding: '10px 0px 13px 0px', fontSize: '14px' }}
+                  style={{ padding: '10px 0px 13px 0px' }}
                 >
                   {row.title}
-                </TableCell>
-                <TableCell
+                </TableCellItem>
+                <TableCellItem
                   align="right"
-                  style={{ padding: '10px 0px 13px 0px', fontSize: '14px' }}
+                  style={{ padding: '10px 0px 13px 0px' }}
                 >
                   {row.list}
-                </TableCell>
+                </TableCellItem>
               </TableRow>
             ))}
           </TableBody>

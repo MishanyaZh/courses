@@ -24,6 +24,7 @@ export const Chart = styled(Paper)`
   height: 400px;
   margin-right: 24px;
   padding: 24px 20px 24px 24px;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04);
 `;
 
 export const ChartDescription = styled.div`
