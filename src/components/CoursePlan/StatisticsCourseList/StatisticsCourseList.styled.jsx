@@ -27,13 +27,6 @@ export const Chart = styled(Paper)`
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04);
 `;
 
-export const ChartDescription = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const Column = styled.div`
   display: flex;
   flex-direction: column;

@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { ChartDescription } from './ChartBar.styled';
 
 ChartJS.register(
   CategoryScale,
@@ -61,6 +62,13 @@ const data = {
 const ChartBar = () => {
   return (
     <>
+      <ChartDescription>
+        <div>
+          <h2>Dochód</h2>
+          <div>6 599,99 zł</div>
+        </div>
+        <div>ten tydzień</div>
+      </ChartDescription>
       <Bar options={options} data={data} />
     </>
   );

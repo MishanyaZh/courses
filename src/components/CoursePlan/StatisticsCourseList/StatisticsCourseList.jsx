@@ -11,7 +11,6 @@ import {
   CardsBox,
   Column,
   Progress,
-  ChartDescription,
 } from './StatisticsCourseList.styled';
 
 const StatisticsCourseList = () => {
@@ -25,13 +24,6 @@ const StatisticsCourseList = () => {
         </Row>
         <Row>
           <Chart>
-            <ChartDescription>
-              <div>
-                <h2>Dochód</h2>
-                <div>6 599,99 zł</div>
-              </div>
-              <div>ten tydzień</div>
-            </ChartDescription>
             <ChartBar />
           </Chart>
           <Column>
