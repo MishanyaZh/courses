@@ -31,9 +31,3 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const Progress = styled(Paper)`
-  width: 427px;
-  height: 268px;
-  margin-right: 24px;
-`;

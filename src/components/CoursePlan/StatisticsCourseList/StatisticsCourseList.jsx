@@ -4,13 +4,13 @@ import StatisticForm from '../StatisticForm/StatisticForm';
 import DynamicsCourses from '../DynamicsCourses/DynamicsCourses';
 import SoldCoursesList from '../SoldCoursesList/SoldCoursesList';
 import ActiveDiscussion from '../ActiveDiscussion/ActiveDiscussion';
+import AbandonedStages from '../AbandonedStages/AbandonedStages';
 import {
   Rating,
   Row,
   Chart,
   CardsBox,
   Column,
-  Progress,
 } from './StatisticsCourseList.styled';
 
 const StatisticsCourseList = () => {
@@ -31,7 +31,7 @@ const StatisticsCourseList = () => {
           </Column>
         </Row>
         <Row>
-          <Progress>box2</Progress>
+          <AbandonedStages />
           <ActiveDiscussion />
         </Row>
       </CardsBox>
