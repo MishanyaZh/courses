@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 
 export const ProgressBox = styled(Paper)`
   box-sizing: border-box;
-  width: 427px;
+  min-width: 427px;
   height: 268px;
   margin-right: 24px;
   padding: 24px;

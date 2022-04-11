@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import TableCell from '@mui/material/TableCell';
 
 export const ActiveDiscussionList = styled(Paper)`
-  width: 427px;
+  min-width: 427px;
   height: 268px;
   margin-right: 24px;
   padding: 24px;

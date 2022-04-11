@@ -5,7 +5,7 @@ export const SoldCourses = styled(Paper)`
   box-sizing: border-box;
   padding: 24px;
   position: relative;
-  width: 201px;
+  min-width: 201px;
   height: 180px;
   margin-right: 24px;
   background-repeat: no-repeat;

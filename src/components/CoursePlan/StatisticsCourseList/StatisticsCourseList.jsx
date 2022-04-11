@@ -5,13 +5,8 @@ import DynamicsCourses from '../DynamicsCourses/DynamicsCourses';
 import SoldCoursesList from '../SoldCoursesList/SoldCoursesList';
 import ActiveDiscussion from '../ActiveDiscussion/ActiveDiscussion';
 import AbandonedStages from '../AbandonedStages/AbandonedStages';
-import {
-  Rating,
-  Row,
-  Chart,
-  CardsBox,
-  Column,
-} from './StatisticsCourseList.styled';
+import Rating from '../Rating/Rating';
+import { Row, Chart, CardsBox, Column } from './StatisticsCourseList.styled';
 
 const StatisticsCourseList = () => {
   return (
@@ -20,7 +15,7 @@ const StatisticsCourseList = () => {
       <CardsBox>
         <Row>
           <SoldCoursesList />
-          <Rating>box3</Rating>
+          <Rating />
         </Row>
         <Row>
           <Chart>

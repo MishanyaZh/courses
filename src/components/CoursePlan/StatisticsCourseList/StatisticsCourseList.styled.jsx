@@ -4,17 +4,13 @@ import Paper from '@mui/material/Paper';
 export const CardsBox = styled.div`
   margin-top: 32px;
 `;
+
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;
 `;
 
-export const Rating = styled(Paper)`
-  width: 427px;
-  height: 180px;
-  margin-right: 24px;
-`;
 export const Chart = styled(Paper)`
   box-sizing: border-box;
   display: flex;
