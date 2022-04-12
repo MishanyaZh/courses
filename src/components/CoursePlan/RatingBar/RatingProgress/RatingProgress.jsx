@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Item, Progress, Title } from './RatingProgress.styled';
+import { Item, Progress, ProgressBox, Title } from './RatingProgress.styled';
 
 const createData = (title, value, id) => {
   return { title, value, id };
@@ -28,7 +28,9 @@ const RatingProgress = () => {
             <label for={item.id}>
               <Title>{item.title}</Title>
             </label>
-            <Progress id={item.id} value={item.value} max={100} />
+            <ProgressBox>
+              <Progress id={item.id} value={item.value} max={100} />
+            </ProgressBox>
           </Item>
         ))}
       </div>
