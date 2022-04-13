@@ -12,14 +12,6 @@ export const Title = styled.div`
   margin-right: 20px;
 `;
 
-export const ProgressBox = styled.div`
-  /* ::-moz-progress-bar {
-    height: 8px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, rgba(0, 172, 193, 0.4) 0%, #00acc1 100%);
-  } */
-`;
-
 export const Progress = styled.progress`
   width: 200px;
   height: 8px;

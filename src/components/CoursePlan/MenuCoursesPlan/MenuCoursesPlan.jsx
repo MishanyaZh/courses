@@ -19,7 +19,7 @@ import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 const MenuCoursesPlan = () => {
   return (
     <>
-      <MenuBox style={{ background: '#B0BEC5' }}>
+      <MenuBox style={{ background: 'rgba(176, 190, 197, 1)' }}>
         <List
           style={{
             padding: '0px',

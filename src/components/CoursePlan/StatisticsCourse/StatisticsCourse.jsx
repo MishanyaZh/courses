@@ -17,10 +17,10 @@ const StatisticsCourse = () => {
 
   return (
     <Box
-    // sx={{
-    //   width: '100%',
-    //   minHeight: '868px',
-    // }}
+      sx={{
+        width: '100%',
+        minHeight: '868px',
+      }}
     >
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
