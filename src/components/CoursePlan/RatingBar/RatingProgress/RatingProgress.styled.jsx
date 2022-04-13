@@ -29,7 +29,7 @@ export const Progress = styled.progress`
     background: #eceff1;
   }
   &::-webkit-progress-value {
-    border-radius: 4px;
+    border-radius: 4px 0px 0px 0px;
     background: linear-gradient(90deg, rgba(0, 172, 193, 0.4) 0%, #00acc1 100%);
   }
   &::-moz-progress-bar {
