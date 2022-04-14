@@ -7,7 +7,14 @@ import Switch from '@mui/material/Switch';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
-import { CardTytle, Img, ImgBox } from './CoursList.styled';
+import {
+  BottomCardColumn,
+  BottomItems,
+  BottomSubtitles,
+  CardTytle,
+  Img,
+  ImgBox,
+} from './CoursList.styled';
 
 import { cardsData } from '../../../assets/cardsData';
 
@@ -22,16 +29,16 @@ import {
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
-  padding: theme.spacing(1),
+  // padding: theme.spacing(1),
   display: 'flex',
   textAlign: 'start',
   color: theme.palette.text.secondary,
-  width: '758px',
+  minWidth: '758px',
 }));
 
 const CoursList = () => {
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>
         {cardsData.map(item => (
           <Item key={item.id}>
@@ -54,7 +61,7 @@ const CoursList = () => {
                       style={{
                         width: '40px',
                         height: '40px',
-                        marginRight: '24px',
+                        // marginRight: '24px',
                       }}
                       aria-label="more"
                       id="long-button"
@@ -73,26 +80,26 @@ const CoursList = () => {
                 </TopCard>
                 <Divider />
                 <BottomCard>
-                  <div>
-                    <p>{item.date}</p>
-                    <p>data utworzenia</p>
-                  </div>
-                  <div>
-                    <p>{item.autor}</p>
-                    <p>twórca</p>
-                  </div>
-                  <div>
-                    <p>{item.moduls}</p>
-                    <p>modułów</p>
-                  </div>
-                  <div>
-                    <p>{item.students}</p>
-                    <p>kursantów</p>
-                  </div>
-                  <div>
-                    <p>{item.comments}</p>
-                    <p>komentarze</p>
-                  </div>
+                  <BottomCardColumn>
+                    <BottomItems>{item.date}</BottomItems>
+                    <BottomSubtitles>data utworzenia</BottomSubtitles>
+                  </BottomCardColumn>
+                  <BottomCardColumn>
+                    <BottomItems>{item.autor}</BottomItems>
+                    <BottomSubtitles>twórca</BottomSubtitles>
+                  </BottomCardColumn>
+                  <BottomCardColumn>
+                    <BottomItems>{item.moduls}</BottomItems>
+                    <BottomSubtitles>modułów</BottomSubtitles>
+                  </BottomCardColumn>
+                  <BottomCardColumn>
+                    <BottomItems>{item.students}</BottomItems>
+                    <BottomSubtitles>kursantów</BottomSubtitles>
+                  </BottomCardColumn>
+                  <BottomCardColumn>
+                    <BottomItems>{item.comments}</BottomItems>
+                    <BottomSubtitles>komentarze</BottomSubtitles>
+                  </BottomCardColumn>
                 </BottomCard>
               </RightCard>
             </CardContent>
