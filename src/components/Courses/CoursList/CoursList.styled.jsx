@@ -1,4 +1,12 @@
 import styled from '@emotion/styled';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+export const MoreVertIconS = styled(MoreVertIcon)`
+  padding: 5px;
+  color: rgba(0, 172, 193, 1);
+  border: 1px solid rgba(176, 190, 197, 1);
+  border-radius: 25px;
+`;
 
 export const CardContent = styled.div`
   max-width: 758px;
