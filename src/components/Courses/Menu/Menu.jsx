@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  MenuBox,
-  ListItemStyled,
-  LogoDown,
-  NavLinkStyled,
-} from './Menu.styled';
+import { MenuBox, ListItemStyled, LogoDown } from './Menu.styled';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import MenuItems from '../../MenuItems/MenuItems';
 
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
@@ -17,7 +13,6 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import OutputIcon from '@mui/icons-material/Output';
-
 import logodown from '../Menu/logodown.svg';
 
 const createData = (icon, text, id) => {
@@ -25,17 +20,13 @@ const createData = (icon, text, id) => {
 };
 
 const items = [
-  createData(<DashboardOutlinedIcon sx={{ mr: '28px' }} />, 'Dashboad', 1),
-  createData(<VideoLibraryIcon sx={{ mr: '28px' }} />, 'Kursy', 2),
-  createData(<StoreIcon sx={{ mr: '28px' }} />, 'Produkty', 3),
-  createData(<GroupOutlinedIcon sx={{ mr: '28px' }} />, 'Użytkownicy', 4),
-  createData(<CampaignIcon sx={{ mr: '28px' }} />, 'Marketing', 5),
-  createData(
-    <AccountBalanceWalletOutlinedIcon sx={{ mr: '28px' }} />,
-    'Sprzedaż',
-    6,
-  ),
-  createData(<FolderOpenIcon sx={{ mr: '28px' }} />, 'Repozytorium', 7),
+  createData(<DashboardOutlinedIcon />, 'Dashboad', 1),
+  createData(<VideoLibraryIcon />, 'Kursy', 2),
+  createData(<StoreIcon />, 'Produkty', 3),
+  createData(<GroupOutlinedIcon />, 'Użytkownicy', 4),
+  createData(<CampaignIcon />, 'Marketing', 5),
+  createData(<AccountBalanceWalletOutlinedIcon />, 'Sprzedaż', 6),
+  createData(<FolderOpenIcon />, 'Repozytorium', 7),
 ];
 
 const Menu = () => {
@@ -48,14 +39,7 @@ const Menu = () => {
           aria-label="mailbox folders"
         >
           <Divider />
-          {items.map(item => (
-            <NavLinkStyled to="/courseplan">
-              <ListItemStyled key={item.id} button>
-                {item.icon}
-                <ListItemText primary={item.text} />
-              </ListItemStyled>
-            </NavLinkStyled>
-          ))}
+          <MenuItems items={items} />
         </List>
 
         <List>

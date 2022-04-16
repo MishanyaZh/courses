@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  MenuBox,
-  ListItemStyled,
-  NavLinkStyled,
-} from '../../Courses/Menu/Menu.styled';
+import { MenuBox } from '../../Courses/Menu/Menu.styled';
+import MenuItems from '../../MenuItems/MenuItems';
 import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
@@ -15,6 +11,21 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+
+const createData = (icon, text, id, right) => {
+  return { icon, text, id, right };
+};
+
+const items = [
+  createData(<DashboardOutlinedIcon />, 'Informacje ogólne', 1, ''),
+  createData(<VideoLibraryIcon />, 'Plan kursu', 2, '+icon'),
+  createData(<StoreIcon />, 'Kursanci', 3, ''),
+  createData(<GroupOutlinedIcon />, 'Statystyki', 4, ''),
+  createData(<CampaignIcon />, 'Ustawienia', 5, ''),
+  createData(<AccountBalanceWalletOutlinedIcon />, 'Wiadomości · ', 6, '2'),
+  createData(<FolderOpenIcon />, 'Prace domowe · ', 7, '3'),
+  createData(<FolderOpenIcon />, 'Wydarzenia', 8, ''),
+];
 
 const MenuCoursesPlan = () => {
   return (
@@ -30,44 +41,7 @@ const MenuCoursesPlan = () => {
           aria-label="mailbox folders"
         >
           <Divider />
-          <ListItemStyled button>
-            <DashboardOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Informacje ogólne" />
-          </ListItemStyled>
-
-          <NavLinkStyled to="/courseplan">
-            <ListItemStyled button style={{ color: 'rgba(0, 172, 193, 1)' }}>
-              <VideoLibraryIcon sx={{ fontSize: 24, mr: '28px' }} />
-              <ListItemText primary="Plan kursu" />
-            </ListItemStyled>
-          </NavLinkStyled>
-
-          <ListItemStyled button>
-            <StoreIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Kursanci" />
-          </ListItemStyled>
-          <ListItemStyled button>
-            <GroupOutlinedIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Statystyki" />
-          </ListItemStyled>
-          <ListItemStyled button>
-            <CampaignIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Ustawienia" />
-          </ListItemStyled>
-          <ListItemStyled button>
-            <AccountBalanceWalletOutlinedIcon
-              sx={{ fontSize: 24, mr: '28px' }}
-            />
-            <ListItemText primary="Wiadomości · 2" />
-          </ListItemStyled>
-          <ListItemStyled button>
-            <FolderOpenIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Prace domowe · 3" />
-          </ListItemStyled>
-          <ListItemStyled button>
-            <FolderOpenIcon sx={{ fontSize: 24, mr: '28px' }} />
-            <ListItemText primary="Wydarzenia" />
-          </ListItemStyled>
+          <MenuItems items={items} righttext={true} />
         </List>
       </MenuBox>
     </>
