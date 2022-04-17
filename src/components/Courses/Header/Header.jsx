@@ -5,13 +5,31 @@ import {
   Title,
 } from '../Main/Main.styled';
 import { LogoTop } from '../Menu/Menu.styled';
-import { Avatar, Badge, Stack } from '@mui/material';
+import {
+  Avatar,
+  Badge,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { Autor, Name, SelectStyled } from '../Messages/Messages.styled';
 import { BoxLogo, BoxTitle, HeaderBox } from './Header.styled';
 import logotyp from '../Header/logotyp.svg';
 import jan from '../Header/jan.svg';
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenUserMenu = event => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
     <>
       <HeaderBox>
@@ -32,9 +50,34 @@ const Header = () => {
           </Stack>
         </BoxTitle>
         <Autor>
-          <Avatar alt="Remy Sharp" src={jan} style={{ cursor: 'pointer' }} />
+          <Avatar alt="Remy Sharp" src={jan} />
           <Name>Jan Kowalski</Name>
-          <SelectStyled style={{ cursor: 'pointer' }} />
+          <SelectStyled
+            onClick={handleOpenUserMenu}
+            style={{ cursor: 'pointer' }}
+          />
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map(setting => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
         </Autor>
       </HeaderBox>
     </>
