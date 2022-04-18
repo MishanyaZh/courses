@@ -22,23 +22,7 @@ export const MessagesBox = styled.div`
   flex-direction: column;
   align-items: center;
   min-width: 300px;
-`;
-
-export const Autor = styled.div`
-  display: flex;
-  align-items: center;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.2;
-  margin-left: 108px;
-
-  color: #37474f;
-`;
-
-export const Name = styled.span`
-  margin-left: 8px;
+  background: #ffffff;
 `;
 
 export const BlueBox = styled.div`

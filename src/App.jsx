@@ -14,7 +14,7 @@ function App() {
       style={{
         maxWidth: '1366px',
         margin: '0 auto',
-        background: 'rgba(245, 247, 248, 0.6)',
+        // background: 'rgba(245, 247, 248, 0.6)',
       }}
     >
       <Suspense fallback={null}>

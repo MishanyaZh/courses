@@ -16,7 +16,8 @@ export const BoxTitle = styled.div`
 `;
 
 export const HeaderBox = styled.div`
-  width: 1366px;
+  max-width: 1366px;
+  width: 1066px;
   display: flex;
   flex-direction: row;
   align-items: center;

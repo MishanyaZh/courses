@@ -1,5 +1,6 @@
 import React from 'react';
 import LastNews from '../LatestNews/LatestNews';
+import UserMenu from '../UserMenu/UserMenu';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import {
   MessagesBox,
@@ -18,7 +19,6 @@ import {
   DividerB,
   String4,
 } from './Messages.styled';
-// import jan from '../Messages/jan.svg';
 import up from '../Messages/up.svg';
 import kub from '../Messages/kub.svg';
 
@@ -26,6 +26,7 @@ const Messages = () => {
   return (
     <>
       <MessagesBox>
+        <UserMenu />
         <BlueBox>
           <SvgUp src={up} alt="#" />
           <TextBox>

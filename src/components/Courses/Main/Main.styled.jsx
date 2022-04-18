@@ -22,9 +22,11 @@ export const BoxHeaderStyled = styled(Box)`
 
 export const EmailIconStyled = styled(EmailIcon)`
   fill: rgba(55, 71, 79, 1);
+  cursor: pointer;
 `;
 export const NotificationsIconStyled = styled(NotificationsIcon)`
   fill: rgba(55, 71, 79, 1);
+  cursor: pointer;
 `;
 
 export const Subtitle = styled(Typography)`
