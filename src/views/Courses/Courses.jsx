@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Menu from '../../components/Courses/Menu/Menu';
 import Main from '../../components/Courses/Main/Main';
@@ -12,7 +12,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const drawerWidth = 340;
 
 const Courses = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     open ? setOpen(false) : setOpen(true);
