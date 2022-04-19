@@ -33,21 +33,21 @@ const Courses = () => {
           >
             <ChevronRightIcon />
           </IconButtonDr>
-        </MainBox>
-        <DrawerS
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
+          <DrawerS
+            sx={{
               width: drawerWidth,
-            },
-          }}
-          variant="persistent"
-          anchor="right"
-          open={open}
-        >
-          <Messages />
-        </DrawerS>
+              flexShrink: 0,
+              '& .MuiDrawer-paper': {
+                width: drawerWidth,
+              },
+            }}
+            variant="persistent"
+            anchor="right"
+            open={open}
+          >
+            <Messages />
+          </DrawerS>
+        </MainBox>
       </CoursesBox>
     </>
   );

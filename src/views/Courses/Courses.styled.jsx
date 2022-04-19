@@ -7,7 +7,7 @@ export const IconButtonDr = styled(IconButton)`
   z-index: 2000;
   position: absolute;
   right: 0%;
-  top: 50%;
+  top: 30%;
   width: 32px;
   height: 32px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
@@ -25,6 +25,7 @@ export const CoursesBox = styled.div`
 export const DrawerS = styled(Drawer)`
   & .css-18sg6k4-MuiPaper-root-MuiDrawer-paper {
     position: fixed;
-    right: 15px;
+    right: unset;
+    top: 0;
   }
 `;
