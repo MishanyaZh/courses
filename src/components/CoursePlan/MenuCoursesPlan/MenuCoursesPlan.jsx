@@ -1,5 +1,4 @@
 import React from 'react';
-import { MenuBox } from '../../Courses/Menu/Menu.styled';
 import MenuItems from '../../MenuItems/MenuItems';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -11,7 +10,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
-
+import { MenuBoxCoursePlan } from './MenuCoursesPlan.styled';
 const createData = (icon, text, id, right) => {
   return { icon, text, id, right };
 };
@@ -30,12 +29,13 @@ const items = [
 const MenuCoursesPlan = () => {
   return (
     <>
-      <MenuBox style={{ background: 'rgba(176, 190, 197, 1)' }}>
+      <MenuBoxCoursePlan>
         <List
           style={{
             padding: '0px',
             color: 'rgba(55, 71, 79, 1)',
             width: '260px',
+            opacity: '1',
           }}
           component="nav"
           aria-label="mailbox folders"
@@ -43,7 +43,7 @@ const MenuCoursesPlan = () => {
           <Divider />
           <MenuItems items={items} righttext={true} />
         </List>
-      </MenuBox>
+      </MenuBoxCoursePlan>
     </>
   );
 };
