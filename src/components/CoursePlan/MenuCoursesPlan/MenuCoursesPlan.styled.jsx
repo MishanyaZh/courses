@@ -15,7 +15,7 @@ export const MenuBoxCoursePlan = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 100%;
   background-blend-mode: multiply;
   background-color: rgba(176, 190, 197, 0.5);
   background-image: url(${menu});
