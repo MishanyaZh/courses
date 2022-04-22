@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -41,14 +41,16 @@ const options = ['None', 'Aktynwne', 'Nieaktywne', 'Wersje robocze'];
 const ITEM_HEIGHT = 48;
 
 const CoursList = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>

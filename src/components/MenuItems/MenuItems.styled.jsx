@@ -33,6 +33,7 @@ export const Description = styled.div`
   align-items: center;
 `;
 export const Notification = styled.div`
+  margin-left: 8px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;

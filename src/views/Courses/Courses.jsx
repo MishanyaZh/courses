@@ -8,6 +8,7 @@ import { CoursesBox, DrawerS, IconButtonDr } from './Courses.styled';
 import Header from '../../components/Courses/Header/Header';
 import { MainBox } from '../CoursePlan/CoursePlan.styled';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 const drawerWidth = 340;
 
@@ -31,7 +32,7 @@ const Courses = () => {
             onClick={handleDrawerOpen}
             style={{ width: '32px', height: '32px' }}
           >
-            <ChevronRightIcon />
+            {open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButtonDr>
           <DrawerS
             sx={{

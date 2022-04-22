@@ -11,12 +11,12 @@ export const HeaderBox = styled.header`
 `;
 
 export const Descriptions = styled.div`
-  margin-left: 209px;
+  margin-left: 200px;
   margin-right: 40px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.2;
-  color: #37474f;
+  & span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #37474f;
+  }
 `;

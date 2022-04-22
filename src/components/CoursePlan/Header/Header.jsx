@@ -8,6 +8,7 @@ import {
 import { ButtonColor, ButtonWhite } from '../../NewCourse/Upload/Upload.styled';
 import { ButtonText } from '../MenuCoursesPlan/MenuCoursesPlan.styled';
 import { Descriptions, HeaderBox } from './Header.styled';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 const Header = () => {
   return (
@@ -26,7 +27,10 @@ const Header = () => {
           </Button>
         </NavLink>
         <Subtitle>UX Design od podstaw</Subtitle>
-        <Descriptions>Zdobądź oznaczenie Smart Learning 󰋽 </Descriptions>
+        <Descriptions>
+          <span>Zdobądź oznaczenie Smart Learning</span>
+          <InfoOutlinedIcon style={{ color: 'blue', height: '15px' }} />
+        </Descriptions>
         <ButtonWhite variant="text">Podgląd</ButtonWhite>
         <ButtonColor style={{ marginRight: '24px' }} variant="contained">
           Publikuj
