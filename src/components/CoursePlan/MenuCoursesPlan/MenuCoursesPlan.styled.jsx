@@ -16,9 +16,10 @@ export const MenuBoxCoursePlan = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
+  height: 1379px;
   background-blend-mode: multiply;
   background-color: rgba(176, 190, 197, 0.5);
   background-image: url(${menu});
   background-repeat: no-repeat;
-  background-position: left 10px top 1087px;
+  background-position: left 10px top 1129px;
 `;
