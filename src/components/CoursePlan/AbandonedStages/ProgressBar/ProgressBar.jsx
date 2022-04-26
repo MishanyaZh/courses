@@ -23,7 +23,7 @@ const ProgressBar = () => {
     <>
       {progress.map(item => (
         <ProgresItem key={item.id}>
-          <label for={item.id}>
+          <label htmlFor={item.id}>
             <Value>{item.value}% </Value> <Title> · {item.title}</Title>
           </label>
           <Progress id={item.id} value={item.value} max={100} />

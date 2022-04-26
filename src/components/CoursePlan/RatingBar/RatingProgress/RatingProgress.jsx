@@ -25,7 +25,7 @@ const RatingProgress = () => {
       <div>
         {progress.map(item => (
           <Item key={item.id}>
-            <label for={item.id}>
+            <label htmlFor={item.id}>
               <Title>{item.title}</Title>
             </label>
             <Progress id={item.id} value={item.value} max={100} />

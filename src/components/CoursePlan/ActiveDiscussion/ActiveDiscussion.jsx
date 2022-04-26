@@ -11,15 +11,15 @@ import TableBody from '@mui/material/TableBody';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const createData = (title, list) => {
-  return { title, list };
+const createData = (title, list, id) => {
+  return { title, list, id };
 };
 
 const rows = [
-  createData('Metody badawcze', 24),
-  createData('Metody badawcze', 18),
-  createData('Metody badawcze', 16),
-  createData('Metody badawcze', 10),
+  createData('Metody badawcze', 24, 1),
+  createData('Metody badawcze', 18, 2),
+  createData('Metody badawcze', 16, 3),
+  createData('Metody badawcze', 10, 4),
 ];
 
 const ActiveDiscussion = () => {
@@ -44,7 +44,7 @@ const ActiveDiscussion = () => {
           <TableBody>
             {rows.map(row => (
               <TableRow
-                key={row.title}
+                key={row.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCellItem

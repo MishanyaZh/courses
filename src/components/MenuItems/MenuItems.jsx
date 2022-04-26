@@ -11,8 +11,8 @@ const MenuItems = ({ items, righttext }) => {
   return (
     <>
       {items.map(item => (
-        <NavLinkStyled to="/courseplan">
-          <ListItemStyled key={item.id} button>
+        <NavLinkStyled key={item.id} to="/courseplan">
+          <ListItemStyled button>
             {item.icon}
             <Description>
               <ListItemTextS primary={item.text} />
