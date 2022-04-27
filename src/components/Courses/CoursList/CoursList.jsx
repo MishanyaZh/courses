@@ -40,104 +40,109 @@ const options = ['None', 'Aktynwne', 'Nieaktywne', 'Wersje robocze'];
 
 const ITEM_HEIGHT = 48;
 
-const CoursList = () => {
+const CoursList = ({ cardsDataSort, sortCardsData }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [listGroup, setListGroup] = useState('Aktynwne');
 
   const open = Boolean(anchorEl);
 
   const handleClick = event => {
-    console.log(event);
     setAnchorEl(event.currentTarget);
+    sortCardsData(event.currentTarget.id);
   };
-  const handleClose = () => {
+
+  const handleClose = event => {
+    console.log(event.target.innerText);
+
     setAnchorEl(null);
   };
 
   return (
     <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>
-        {cardsData.map(item => (
-          <Item key={item.id}>
-            <CardContent>
-              <ImgBox>
-                <Img src={item.image} alt="#" />
-              </ImgBox>
-              <RightCard>
-                <TopCard>
-                  <CardTytle>{item.title}</CardTytle>
-                  <Options>
-                    <span>Publiczny</span>
-                    <Switch
-                      defaultChecked
-                      style={{
-                        color: 'rgba(0, 172, 193, 1)',
-                      }}
-                    />
-                    <IconButton
-                      style={{ width: '40px', height: '40px' }}
-                      aria-label="more"
-                      id="long-button"
-                      aria-controls={open ? 'long-menu' : undefined}
-                      aria-expanded={open ? 'true' : undefined}
-                      aria-haspopup="true"
-                      onClick={handleClick}
-                    >
-                      <MoreVertIconS />
-                    </IconButton>
-                    <Menu
-                      id="long-menu"
-                      MenuListProps={{
-                        'aria-labelledby': 'long-button',
-                      }}
-                      anchorEl={anchorEl}
-                      open={open}
-                      onClose={handleClose}
-                      PaperProps={{
-                        style: {
-                          maxHeight: ITEM_HEIGHT * 4.5,
-                          width: '20ch',
-                        },
-                      }}
-                    >
-                      {options.map(option => (
-                        <MenuItem
-                          key={option}
-                          selected={option === 'Pyxis'}
-                          onClick={handleClose}
-                        >
-                          {option}
-                        </MenuItem>
-                      ))}
-                    </Menu>
-                  </Options>
-                </TopCard>
-                <Divider />
-                <BottomCard>
-                  <BottomCardColumn>
-                    <BottomItems>{item.date}</BottomItems>
-                    <BottomSubtitles>data utworzenia</BottomSubtitles>
-                  </BottomCardColumn>
-                  <BottomCardColumn>
-                    <BottomItems>{item.autor}</BottomItems>
-                    <BottomSubtitles>twórca</BottomSubtitles>
-                  </BottomCardColumn>
-                  <BottomCardColumn>
-                    <BottomItems>{item.moduls}</BottomItems>
-                    <BottomSubtitles>modułów</BottomSubtitles>
-                  </BottomCardColumn>
-                  <BottomCardColumn>
-                    <BottomItems>{item.students}</BottomItems>
-                    <BottomSubtitles>kursantów</BottomSubtitles>
-                  </BottomCardColumn>
-                  <BottomCardColumn>
-                    <BottomItems>{item.comments}</BottomItems>
-                    <BottomSubtitles>komentarze</BottomSubtitles>
-                  </BottomCardColumn>
-                </BottomCard>
-              </RightCard>
-            </CardContent>
-          </Item>
-        ))}
+        {cardsDataSort !== [] &&
+          cardsDataSort.map(item => (
+            <Item key={item.id}>
+              <CardContent>
+                <ImgBox>
+                  <Img src={item.image} alt="#" />
+                </ImgBox>
+                <RightCard>
+                  <TopCard>
+                    <CardTytle>{item.title}</CardTytle>
+                    <Options>
+                      <span>Publiczny</span>
+                      <Switch
+                        defaultChecked
+                        style={{
+                          color: 'rgba(0, 172, 193, 1)',
+                        }}
+                      />
+                      <IconButton
+                        style={{ width: '40px', height: '40px' }}
+                        aria-label="more"
+                        id={item.id}
+                        aria-controls={open ? 'long-menu' : undefined}
+                        aria-expanded={open ? 'true' : undefined}
+                        aria-haspopup="true"
+                        onClick={handleClick}
+                      >
+                        <MoreVertIconS />
+                      </IconButton>
+                      <Menu
+                        id="long-menu"
+                        MenuListProps={{
+                          'aria-labelledby': 'long-button',
+                        }}
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        PaperProps={{
+                          style: {
+                            maxHeight: ITEM_HEIGHT * 4.5,
+                            width: '20ch',
+                          },
+                        }}
+                      >
+                        {options.map(option => (
+                          <MenuItem
+                            key={option}
+                            selected={option === 'Pyxis'}
+                            onClick={handleClose}
+                          >
+                            {option}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </Options>
+                  </TopCard>
+                  <Divider />
+                  <BottomCard>
+                    <BottomCardColumn>
+                      <BottomItems>{item.date}</BottomItems>
+                      <BottomSubtitles>data utworzenia</BottomSubtitles>
+                    </BottomCardColumn>
+                    <BottomCardColumn>
+                      <BottomItems>{item.autor}</BottomItems>
+                      <BottomSubtitles>twórca</BottomSubtitles>
+                    </BottomCardColumn>
+                    <BottomCardColumn>
+                      <BottomItems>{item.moduls}</BottomItems>
+                      <BottomSubtitles>modułów</BottomSubtitles>
+                    </BottomCardColumn>
+                    <BottomCardColumn>
+                      <BottomItems>{item.students}</BottomItems>
+                      <BottomSubtitles>kursantów</BottomSubtitles>
+                    </BottomCardColumn>
+                    <BottomCardColumn>
+                      <BottomItems>{item.comments}</BottomItems>
+                      <BottomSubtitles>komentarze</BottomSubtitles>
+                    </BottomCardColumn>
+                  </BottomCard>
+                </RightCard>
+              </CardContent>
+            </Item>
+          ))}
       </Stack>
     </Box>
   );

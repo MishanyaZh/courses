@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { TabList } from '@mui/lab';
 import TabContext from '@mui/lab/TabContext';
@@ -8,8 +8,23 @@ import { TabStyled } from './YourCourses.styled';
 
 import CoursList from '../CoursList/CoursList';
 
+import { cardsData } from '../../../assets/cardsData';
+
 const YourCourses = () => {
+  const [cardsDataSort, setCardsDataSort] = useState([]);
   const [value, setValue] = useState('1');
+
+  // useEffect(() => {
+  //   setCardsDataSort(cardsData);
+  //   console.log(cardsDataSort);
+  // }, [cardsDataSort]);
+
+  const sortCardsData = id => {
+    console.log(id);
+    const items = cardsData.filter(item => item.id === id);
+    setCardsDataSort(items);
+    console.log(items);
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -30,13 +45,19 @@ const YourCourses = () => {
           </TabList>
         </Box>
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
-          <CoursList />
+          <CoursList cardsDataSort={cardsData} sortCardsData={sortCardsData} />
         </TabPanel>
-        <TabPanel value="2">
-          <p>ups empty...</p>
+        <TabPanel value="2" style={{ padding: '24px 0px 0px 0px' }}>
+          <CoursList
+            cardsDataSort={cardsDataSort}
+            sortCardsData={sortCardsData}
+          />
         </TabPanel>
-        <TabPanel value="3">
-          <p>ups empty...</p>
+        <TabPanel value="3" style={{ padding: '24px 0px 0px 0px' }}>
+          {/* <CoursList
+            cardsDataSort={cardsDataSort}
+            sortCardsData={sortCardsData}
+          /> */}
         </TabPanel>
       </TabContext>
     </Box>
