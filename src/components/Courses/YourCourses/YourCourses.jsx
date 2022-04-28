@@ -14,16 +14,15 @@ const YourCourses = () => {
   const [cardsDataSort, setCardsDataSort] = useState([]);
   const [value, setValue] = useState('1');
 
-  // useEffect(() => {
-  //   setCardsDataSort(cardsData);
-  //   console.log(cardsDataSort);
-  // }, [cardsDataSort]);
+  useEffect(() => {}, []);
 
-  const sortCardsData = id => {
-    console.log(id);
-    const items = cardsData.filter(item => item.id === id);
-    setCardsDataSort(items);
-    console.log(items);
+  const handleSortCardsData = (id, group) => {
+    const additem = cardsData.filter(item => item.id === id);
+    const unic = cardsDataSort.find(item => item.id === id);
+    console.log(unic);
+    if (group === 'Nieaktywne') {
+      setCardsDataSort(prevState => [...prevState, ...additem]);
+    }
   };
 
   const handleChange = (event, newValue) => {
@@ -45,18 +44,21 @@ const YourCourses = () => {
           </TabList>
         </Box>
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
-          <CoursList cardsDataSort={cardsData} sortCardsData={sortCardsData} />
+          <CoursList
+            cardsDataSort={cardsData}
+            handleSortCardsData={handleSortCardsData}
+          />
         </TabPanel>
         <TabPanel value="2" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
             cardsDataSort={cardsDataSort}
-            sortCardsData={sortCardsData}
+            handleSortCardsData={handleSortCardsData}
           />
         </TabPanel>
         <TabPanel value="3" style={{ padding: '24px 0px 0px 0px' }}>
           {/* <CoursList
             cardsDataSort={cardsDataSort}
-            sortCardsData={sortCardsData}
+            handleSortCardsData={handleSortCardsData}
           /> */}
         </TabPanel>
       </TabContext>

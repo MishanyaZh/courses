@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -40,19 +40,24 @@ const options = ['None', 'Aktynwne', 'Nieaktywne', 'Wersje robocze'];
 
 const ITEM_HEIGHT = 48;
 
-const CoursList = ({ cardsDataSort, sortCardsData }) => {
+const CoursList = ({ cardsDataSort, handleSortCardsData }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [listGroup, setListGroup] = useState('Aktynwne');
+  const [listGroup, setListGroup] = useState('');
+  const [listId, setListId] = useState('');
 
   const open = Boolean(anchorEl);
 
+  useEffect(() => {
+    handleSortCardsData(listId, listGroup);
+  }, [listGroup]);
+
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
-    sortCardsData(event.currentTarget.id);
+    setListId(event.currentTarget.id);
   };
 
   const handleClose = event => {
-    console.log(event.target.innerText);
+    setListGroup(event.target.innerText);
 
     setAnchorEl(null);
   };
