@@ -11,17 +11,47 @@ import CoursList from '../CoursList/CoursList';
 import { cardsData } from '../../../assets/cardsData';
 
 const YourCourses = () => {
-  const [cardsDataSort, setCardsDataSort] = useState([]);
   const [value, setValue] = useState('1');
 
-  useEffect(() => {}, []);
+  const [cardsDataActive, setCardsDataActive] = useState([]);
+  const [cardsDataInactive, setCardsDataInactive] = useState([]);
 
-  const handleSortCardsData = (id, group) => {
-    const additem = cardsData.filter(item => item.id === id);
-    const unic = cardsDataSort.find(item => item.id === id);
-    console.log(unic);
-    if (group === 'Nieaktywne') {
-      setCardsDataSort(prevState => [...prevState, ...additem]);
+  const [listGroup, setListGroup] = useState('');
+  const [listId, setListId] = useState('');
+
+  useEffect(() => {
+    setCardsDataActive(cardsData);
+    handleSortCardsData(listId, listGroup);
+  }, [listGroup, listId]);
+
+  const getGroup = group => {
+    setListGroup(group);
+  };
+  const getId = id => {
+    setListId(id);
+  };
+
+  const handleSortCardsData = (listId, listGroup) => {
+    const currentItem = cardsDataActive.filter(item => item.id === listId);
+
+    if (listGroup === 'Nieaktywne') {
+      const unicInactive = cardsDataInactive.find(item => item.id === listId);
+      console.log(unicInactive);
+      if (!unicInactive) {
+        setCardsDataInactive(prevState => [...prevState, ...currentItem]);
+        setCardsDataActive(cardsDataActive.filter(item => item.id !== listId));
+      }
+    }
+
+    if (listGroup === 'Aktynwne') {
+      const unicActive = cardsDataActive.find(item => item.id === listId);
+      console.log(unicActive);
+      if (!unicActive) {
+        setCardsDataActive(prevState => [...prevState, ...currentItem]);
+        setCardsDataInactive(
+          cardsDataInactive.filter(item => item.id !== listId),
+        );
+      }
     }
   };
 
@@ -45,19 +75,23 @@ const YourCourses = () => {
         </Box>
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
-            cardsDataSort={cardsData}
+            data={cardsDataActive}
             handleSortCardsData={handleSortCardsData}
+            getGroup={getGroup}
+            getId={getId}
           />
         </TabPanel>
         <TabPanel value="2" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
-            cardsDataSort={cardsDataSort}
+            data={cardsDataInactive}
             handleSortCardsData={handleSortCardsData}
+            getGroup={getGroup}
+            getId={getId}
           />
         </TabPanel>
         <TabPanel value="3" style={{ padding: '24px 0px 0px 0px' }}>
           {/* <CoursList
-            cardsDataSort={cardsDataSort}
+            cardsDataInactive={cardsDataInactive}
             handleSortCardsData={handleSortCardsData}
           /> */}
         </TabPanel>

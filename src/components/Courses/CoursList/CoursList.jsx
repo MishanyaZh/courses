@@ -40,33 +40,35 @@ const options = ['None', 'Aktynwne', 'Nieaktywne', 'Wersje robocze'];
 
 const ITEM_HEIGHT = 48;
 
-const CoursList = ({ cardsDataSort, handleSortCardsData }) => {
+const CoursList = ({ data, handleSortCardsData, getGroup, getId }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [listGroup, setListGroup] = useState('');
-  const [listId, setListId] = useState('');
+  // const [listGroup, setListGroup] = useState('');
+  // const [listId, setListId] = useState('');
 
   const open = Boolean(anchorEl);
 
-  useEffect(() => {
-    handleSortCardsData(listId, listGroup);
-  }, [listGroup]);
+  // useEffect(() => {
+  //   handleSortCardsData(listId, listGroup);
+  // }, [listGroup]);
 
   const handleClick = event => {
+    getId(event.currentTarget.id);
     setAnchorEl(event.currentTarget);
-    setListId(event.currentTarget.id);
+    // setListId(event.currentTarget.id);
   };
 
   const handleClose = event => {
-    setListGroup(event.target.innerText);
+    // setListGroup(event.target.innerText);
 
     setAnchorEl(null);
+    getGroup(event.target.innerText);
   };
 
   return (
     <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>
-        {cardsDataSort !== [] &&
-          cardsDataSort.map(item => (
+        {data !== [] &&
+          data.map(item => (
             <Item key={item.id}>
               <CardContent>
                 <ImgBox>
