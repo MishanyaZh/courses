@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -6,6 +6,8 @@ import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
 import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
 import { styled } from '@mui/material/styles';
 import {
   BottomCardColumn,
@@ -16,8 +18,6 @@ import {
   ImgBox,
   MoreVertIconS,
 } from './CoursList.styled';
-
-import { cardsData } from '../../../assets/cardsData';
 
 import {
   CardContent,
@@ -45,19 +45,10 @@ const CoursList = ({ data, getGroup, getId }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const [checked, setChecked] = useState(true);
-
-  const handleChange = event => {
-    console.log(event.currentTarget.id);
-    console.log(event.currentTarget.checked);
-    setChecked(event.currentTarget.checked);
-    // const curentItem = data.filter(item => item.id === event.currentTarget.id);
-    // console.log(curentItem);
-  };
-
   const handleClick = event => {
-    getId(event.currentTarget.id);
+    event.preventDefault();
     setAnchorEl(event.currentTarget);
+    getId(event.currentTarget.id);
   };
 
   const handleClose = event => {
@@ -79,23 +70,23 @@ const CoursList = ({ data, getGroup, getId }) => {
                   <TopCard>
                     <CardTytle>{item.title}</CardTytle>
                     <Options>
-                      <FormControlLabel
-                        // onChange={handleChange}
-                        // checked={checked}
-                        label={checked ? 'Publiczny' : 'Prywatny'}
-                        labelPlacement="start"
-                        control={
-                          <Switch
-                            onChange={handleChange}
-                            defaultChecked
-                            id={item.id}
-                            style={{
-                              color: 'rgba(0, 172, 193, 1)',
-                              marginRight: '20px',
-                            }}
+                      <FormControl>
+                        <FormGroup>
+                          <FormControlLabel
+                            label="Publiczny"
+                            labelPlacement="start"
+                            control={
+                              <Switch
+                                defaultChecked
+                                style={{
+                                  color: 'rgba(0, 172, 193, 1)',
+                                  marginRight: '20px',
+                                }}
+                              />
+                            }
                           />
-                        }
-                      />
+                        </FormGroup>
+                      </FormControl>
                       <IconButton
                         style={{ width: '40px', height: '40px' }}
                         aria-label="more"
