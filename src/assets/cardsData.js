@@ -12,6 +12,7 @@ export const cardsData = [
     moduls: 5,
     students: 28,
     comments: 2,
+    status: 'Publiczny',
   },
   {
     id: '2',
@@ -22,6 +23,7 @@ export const cardsData = [
     moduls: 5,
     students: 28,
     comments: 2,
+    status: 'Publiczny',
   },
   {
     id: '3',
@@ -32,6 +34,7 @@ export const cardsData = [
     moduls: 5,
     students: 28,
     comments: 2,
+    status: 'Publiczny',
   },
   {
     id: '4',
@@ -42,6 +45,7 @@ export const cardsData = [
     moduls: 5,
     students: 28,
     comments: 2,
+    status: 'Publiczny',
   },
   {
     id: '5',
@@ -52,5 +56,6 @@ export const cardsData = [
     moduls: 5,
     students: 28,
     comments: 2,
+    status: 'Publiczny',
   },
 ];

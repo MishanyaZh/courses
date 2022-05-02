@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
 import IconButton from '@mui/material/IconButton';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { styled } from '@mui/material/styles';
 import {
   BottomCardColumn,
@@ -40,26 +41,26 @@ const options = ['None', 'Aktynwne', 'Nieaktywne', 'Wersje robocze'];
 
 const ITEM_HEIGHT = 48;
 
-const CoursList = ({ data, handleSortCardsData, getGroup, getId }) => {
+const CoursList = ({ data, getGroup, getId }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  // const [listGroup, setListGroup] = useState('');
-  // const [listId, setListId] = useState('');
-
   const open = Boolean(anchorEl);
 
-  // useEffect(() => {
-  //   handleSortCardsData(listId, listGroup);
-  // }, [listGroup]);
+  const [checked, setChecked] = useState(true);
+
+  const handleChange = event => {
+    console.log(event.currentTarget.id);
+    console.log(event.currentTarget.checked);
+    setChecked(event.currentTarget.checked);
+    // const curentItem = data.filter(item => item.id === event.currentTarget.id);
+    // console.log(curentItem);
+  };
 
   const handleClick = event => {
     getId(event.currentTarget.id);
     setAnchorEl(event.currentTarget);
-    // setListId(event.currentTarget.id);
   };
 
   const handleClose = event => {
-    // setListGroup(event.target.innerText);
-
     setAnchorEl(null);
     getGroup(event.target.innerText);
   };
@@ -78,12 +79,22 @@ const CoursList = ({ data, handleSortCardsData, getGroup, getId }) => {
                   <TopCard>
                     <CardTytle>{item.title}</CardTytle>
                     <Options>
-                      <span>Publiczny</span>
-                      <Switch
-                        defaultChecked
-                        style={{
-                          color: 'rgba(0, 172, 193, 1)',
-                        }}
+                      <FormControlLabel
+                        // onChange={handleChange}
+                        // checked={checked}
+                        label={checked ? 'Publiczny' : 'Prywatny'}
+                        labelPlacement="start"
+                        control={
+                          <Switch
+                            onChange={handleChange}
+                            defaultChecked
+                            id={item.id}
+                            style={{
+                              color: 'rgba(0, 172, 193, 1)',
+                              marginRight: '20px',
+                            }}
+                          />
+                        }
                       />
                       <IconButton
                         style={{ width: '40px', height: '40px' }}

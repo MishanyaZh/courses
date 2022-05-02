@@ -43,6 +43,10 @@ export const Options = styled.div`
   display: flex;
   align-items: center;
   margin-left: 20px;
+
+  & .css-julti5-MuiSwitch-root {
+    margin-right: 24px;
+  }
 `;
 
 export const BottomCard = styled.div`
