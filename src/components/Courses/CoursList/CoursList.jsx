@@ -59,6 +59,7 @@ const CoursList = ({ data, getGroup, getId }) => {
   return (
     <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>
+        {data.length === 0 && <div> list empty . . . </div>}
         {data !== [] &&
           data.map(item => (
             <Item key={item.id}>

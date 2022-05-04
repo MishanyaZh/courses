@@ -27,7 +27,7 @@ export const MenuBox = styled(Box)`
 export const LogoTop = styled.img`
   height: 32px;
   width: 151px;
-  margin: 16px 44px 16px 24px;
+  margin: 24px 44px 0px 24px;
   cursor: pointer;
 `;
 export const LogoDown = styled.img`

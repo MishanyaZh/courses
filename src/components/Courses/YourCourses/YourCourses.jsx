@@ -15,6 +15,7 @@ const YourCourses = () => {
 
   const [cardsDataActive, setCardsDataActive] = useState([]);
   const [cardsDataInactive, setCardsDataInactive] = useState([]);
+  const [cardsDataWorkingVersion, setCardsDataWorkingVersion] = useState([]);
 
   const [listGroup, setListGroup] = useState('');
   const [listId, setListId] = useState('');
@@ -33,24 +34,41 @@ const YourCourses = () => {
 
   const handleSortCardsData = (listId, listGroup) => {
     const currentItem = cardsDataActive.filter(item => item.id === listId);
+    console.log(currentItem);
 
     if (listGroup === 'Nieaktywne') {
       const unicInactive = cardsDataInactive.find(item => item.id === listId);
-      console.log(unicInactive);
       if (!unicInactive) {
         setCardsDataInactive(prevState => [...prevState, ...currentItem]);
         setCardsDataActive(cardsDataActive.filter(item => item.id !== listId));
+        setCardsDataWorkingVersion(
+          cardsDataWorkingVersion.filter(item => item.id !== listId),
+        );
       }
     }
 
     if (listGroup === 'Aktynwne') {
       const unicActive = cardsDataActive.find(item => item.id === listId);
-      console.log(unicActive);
       if (!unicActive) {
         setCardsDataActive(prevState => [...prevState, ...currentItem]);
         setCardsDataInactive(
           cardsDataInactive.filter(item => item.id !== listId),
         );
+        setCardsDataWorkingVersion(
+          cardsDataWorkingVersion.filter(item => item.id !== listId),
+        );
+      }
+    }
+    if (listGroup === 'Wersje robocze') {
+      const workingVersion = cardsDataWorkingVersion.find(
+        item => item.id === listId,
+      );
+      if (!workingVersion) {
+        setCardsDataWorkingVersion(prevState => [...prevState, ...currentItem]);
+        setCardsDataInactive(
+          cardsDataInactive.filter(item => item.id !== listId),
+        );
+        setCardsDataActive(cardsDataActive.filter(item => item.id !== listId));
       }
     }
   };
@@ -90,10 +108,12 @@ const YourCourses = () => {
           />
         </TabPanel>
         <TabPanel value="3" style={{ padding: '24px 0px 0px 0px' }}>
-          {/* <CoursList
-            cardsDataInactive={cardsDataInactive}
+          <CoursList
+            data={cardsDataWorkingVersion}
             handleSortCardsData={handleSortCardsData}
-          /> */}
+            getGroup={getGroup}
+            getId={getId}
+          />
         </TabPanel>
       </TabContext>
     </Box>
