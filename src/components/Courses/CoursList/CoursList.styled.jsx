@@ -45,7 +45,7 @@ export const Options = styled.div`
   margin-left: 20px;
 
   & .css-julti5-MuiSwitch-root {
-    margin-right: 24px;
+    /* margin-right: 24px; */
   }
 `;
 

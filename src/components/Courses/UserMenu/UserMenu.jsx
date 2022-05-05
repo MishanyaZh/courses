@@ -1,7 +1,7 @@
 import { Avatar, Menu, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 import { Autor, ExpandMoreIconStyled, Name } from './UserMenu.styled';
-import jan from '../UserMenu/jan.svg';
+import jan from '../UserMenu/jan.jpg';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

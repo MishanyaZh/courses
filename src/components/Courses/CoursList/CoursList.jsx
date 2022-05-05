@@ -81,7 +81,6 @@ const CoursList = ({ data, getGroup, getId }) => {
                                 defaultChecked
                                 style={{
                                   color: 'rgba(0, 172, 193, 1)',
-                                  marginRight: '20px',
                                 }}
                               />
                             }
@@ -89,7 +88,11 @@ const CoursList = ({ data, getGroup, getId }) => {
                         </FormGroup>
                       </FormControl>
                       <IconButton
-                        style={{ width: '40px', height: '40px' }}
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          marginLeft: '24px',
+                        }}
                         aria-label="more"
                         id={item.id}
                         aria-controls={open ? 'long-menu' : undefined}

@@ -15,7 +15,7 @@ export const Autor = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
-  margin-left: 108px;
+  margin-left: 80px;
 
   color: #37474f;
   margin-top: 24px;
@@ -24,4 +24,10 @@ export const Autor = styled.div`
 
 export const Name = styled.span`
   margin-left: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #37474f;
 `;

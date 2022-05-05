@@ -30,6 +30,7 @@ export const NotificationsIconStyled = styled(NotificationsIcon)`
 `;
 
 export const Subtitle = styled(Typography)`
+  font-family: 'Montserrat';
   margin: 25px 0px 6px 0px;
   color: #37474f;
   font-style: normal;
