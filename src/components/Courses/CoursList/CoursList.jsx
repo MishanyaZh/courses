@@ -46,16 +46,15 @@ const CoursList = ({ data, getGroup, getId }) => {
   const open = Boolean(anchorEl);
 
   const handleClick = event => {
-    event.preventDefault();
-    setAnchorEl(event.currentTarget);
     getId(event.currentTarget.id);
+    console.log(event.currentTarget.id);
+    setAnchorEl(event.currentTarget);
   };
 
   const handleClose = event => {
-    setAnchorEl(null);
     getGroup(event.target.innerText);
+    setAnchorEl(null);
   };
-
   return (
     <Box sx={{ width: '758px' }}>
       <Stack spacing={2}>

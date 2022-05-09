@@ -13,29 +13,24 @@ import { cardsData } from '../../../assets/cardsData';
 const YourCourses = () => {
   const [value, setValue] = useState('1');
 
-  const [cardsDataActive, setCardsDataActive] = useState([]);
+  const [cardsDataActive, setCardsDataActive] = useState(
+    cardsData ? cardsData : [],
+  );
   const [cardsDataInactive, setCardsDataInactive] = useState([]);
   const [cardsDataWorkingVersion, setCardsDataWorkingVersion] = useState([]);
 
   const [listGroup, setListGroup] = useState('');
   const [listId, setListId] = useState('');
+  const [currentItem, setCurrentItem] = useState('');
 
   useEffect(() => {
-    setCardsDataActive(cardsData);
     handleSortCardsData(listId, listGroup);
   }, [listGroup, listId]);
 
-  const getGroup = group => {
-    setListGroup(group);
-  };
-  const getId = id => {
-    setListId(id);
-  };
-
   const handleSortCardsData = (listId, listGroup) => {
     const currentItem = cardsDataActive.filter(item => item.id === listId);
+    setCurrentItem(currentItem);
     console.log(currentItem);
-
     if (listGroup === 'Nieaktywne') {
       const unicInactive = cardsDataInactive.find(item => item.id === listId);
       if (!unicInactive) {
@@ -49,6 +44,7 @@ const YourCourses = () => {
 
     if (listGroup === 'Aktynwne') {
       const unicActive = cardsDataActive.find(item => item.id === listId);
+      console.log(unicActive);
       if (!unicActive) {
         setCardsDataActive(prevState => [...prevState, ...currentItem]);
         setCardsDataInactive(
@@ -73,6 +69,12 @@ const YourCourses = () => {
     }
   };
 
+  const getGroup = group => {
+    setListGroup(group);
+  };
+  const getId = id => {
+    setListId(id);
+  };
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -86,9 +88,15 @@ const YourCourses = () => {
             aria-label="lab API tabs example"
             style={{}}
           >
-            <TabStyled label="Aktynwne · 12" value="1" />
-            <TabStyled label="Nieaktywne · 7" value="2" />
-            <TabStyled label="Wersje robocze · 4" value="3" />
+            <TabStyled label={`Aktynwne ${cardsDataActive.length}`} value="1" />
+            <TabStyled
+              label={`Nieaktywne ${cardsDataInactive.length}`}
+              value="2"
+            />
+            <TabStyled
+              label={`Wersje robocze ${cardsDataWorkingVersion.length}`}
+              value="3"
+            />
           </TabList>
         </Box>
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
@@ -121,3 +129,53 @@ const YourCourses = () => {
 };
 
 export default YourCourses;
+
+// switch (listGroup) {
+//   case 'Nieaktywne':
+//     const unicInactive = cardsDataInactive.find(item => item.id === listId);
+//     if (!unicInactive) {
+//       setCardsDataInactive(prevState => [...prevState, ...currentItem]);
+//       setCardsDataActive(
+//         cardsDataActive.filter(item => item.id !== listId),
+//       );
+//       setCardsDataWorkingVersion(
+//         cardsDataWorkingVersion.filter(item => item.id !== listId),
+//       );
+//     }
+//     break;
+
+//   case 'Aktynwne':
+//     const unicActive = cardsDataActive.find(item => item.id === listId);
+//     if (!unicActive) {
+//       setCardsDataActive(prevState => [...prevState, ...currentItem]);
+//       setCardsDataInactive(
+//         cardsDataInactive.filter(item => item.id !== listId),
+//       );
+//       setCardsDataWorkingVersion(
+//         cardsDataWorkingVersion.filter(item => item.id !== listId),
+//       );
+//     }
+//     break;
+
+//   case 'Wersje robocze':
+//     const workingVersion = cardsDataWorkingVersion.find(
+//       item => item.id === listId,
+//     );
+//     if (!workingVersion) {
+//       setCardsDataWorkingVersion(prevState => [
+//         ...prevState,
+//         ...currentItem,
+//       ]);
+//       setCardsDataInactive(
+//         cardsDataInactive.filter(item => item.id !== listId),
+//       );
+//       setCardsDataActive(
+//         cardsDataActive.filter(item => item.id !== listId),
+//       );
+//     }
+//     break;
+
+//   default:
+//     console.log('default case');
+//     break;
+// }
