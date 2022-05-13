@@ -30,13 +30,34 @@ const YourCourses = () => {
   const [currentItem, setCurrentItem] = useState('');
 
   useEffect(() => {
-    handleSortCardsData(listId, listGroup);
-  }, [listGroup, listId]);
+    handleSortCardsData(listId, listGroup, value);
+  }, [listGroup, listId, value]);
 
-  const handleSortCardsData = (listId, listGroup) => {
-    const currentItem = cardsDataActive.filter(item => item.id === listId);
-    setCurrentItem(currentItem);
-    console.log(currentItem);
+  const handleSortCardsData = (listId, listGroup, value) => {
+    switch (value) {
+      case '1':
+        const currentItemActive = cardsDataActive.filter(
+          item => item.id === listId,
+        );
+        setCurrentItem(currentItemActive);
+        break;
+      case '2':
+        const currentItemInactive = cardsDataInactive.filter(
+          item => item.id === listId,
+        );
+        setCurrentItem(currentItemInactive);
+        break;
+      case '3':
+        const currentItemWorkingVersion = cardsDataWorkingVersion.filter(
+          item => item.id === listId,
+        );
+        setCurrentItem(currentItemWorkingVersion);
+        break;
+
+      default:
+        console.log('def');
+        break;
+    }
     if (listGroup === 'Nieaktywne') {
       const unicInactive = cardsDataInactive.find(item => item.id === listId);
       if (!unicInactive) {
@@ -47,10 +68,8 @@ const YourCourses = () => {
         );
       }
     }
-
     if (listGroup === 'Aktynwne') {
       const unicActive = cardsDataActive.find(item => item.id === listId);
-      console.log(unicActive);
       if (!unicActive) {
         setCardsDataActive(prevState => [...prevState, ...currentItem]);
         setCardsDataInactive(
@@ -62,10 +81,10 @@ const YourCourses = () => {
       }
     }
     if (listGroup === 'Wersje robocze') {
-      const workingVersion = cardsDataWorkingVersion.find(
+      const unicWorkingVersion = cardsDataWorkingVersion.find(
         item => item.id === listId,
       );
-      if (!workingVersion) {
+      if (!unicWorkingVersion) {
         setCardsDataWorkingVersion(prevState => [...prevState, ...currentItem]);
         setCardsDataInactive(
           cardsDataInactive.filter(item => item.id !== listId),
@@ -75,14 +94,15 @@ const YourCourses = () => {
     }
   };
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const getGroup = group => {
     setListGroup(group);
   };
   const getId = id => {
     setListId(id);
-  };
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
   };
 
   return (
@@ -135,53 +155,3 @@ const YourCourses = () => {
 };
 
 export default YourCourses;
-
-// switch (listGroup) {
-//   case 'Nieaktywne':
-//     const unicInactive = cardsDataInactive.find(item => item.id === listId);
-//     if (!unicInactive) {
-//       setCardsDataInactive(prevState => [...prevState, ...currentItem]);
-//       setCardsDataActive(
-//         cardsDataActive.filter(item => item.id !== listId),
-//       );
-//       setCardsDataWorkingVersion(
-//         cardsDataWorkingVersion.filter(item => item.id !== listId),
-//       );
-//     }
-//     break;
-
-//   case 'Aktynwne':
-//     const unicActive = cardsDataActive.find(item => item.id === listId);
-//     if (!unicActive) {
-//       setCardsDataActive(prevState => [...prevState, ...currentItem]);
-//       setCardsDataInactive(
-//         cardsDataInactive.filter(item => item.id !== listId),
-//       );
-//       setCardsDataWorkingVersion(
-//         cardsDataWorkingVersion.filter(item => item.id !== listId),
-//       );
-//     }
-//     break;
-
-//   case 'Wersje robocze':
-//     const workingVersion = cardsDataWorkingVersion.find(
-//       item => item.id === listId,
-//     );
-//     if (!workingVersion) {
-//       setCardsDataWorkingVersion(prevState => [
-//         ...prevState,
-//         ...currentItem,
-//       ]);
-//       setCardsDataInactive(
-//         cardsDataInactive.filter(item => item.id !== listId),
-//       );
-//       setCardsDataActive(
-//         cardsDataActive.filter(item => item.id !== listId),
-//       );
-//     }
-//     break;
-
-//   default:
-//     console.log('default case');
-//     break;
-// }
