@@ -9,6 +9,8 @@ import { TabStyled } from './YourCourses.styled';
 import CoursList from '../CoursList/CoursList';
 
 import { cardsData } from '../../../assets/cardsData';
+import { dataInactive } from '../../../assets/cardsData';
+import { dataWorkingVersion } from '../../../assets/cardsData';
 
 const YourCourses = () => {
   const [value, setValue] = useState('1');
@@ -16,8 +18,12 @@ const YourCourses = () => {
   const [cardsDataActive, setCardsDataActive] = useState(
     cardsData ? cardsData : [],
   );
-  const [cardsDataInactive, setCardsDataInactive] = useState([]);
-  const [cardsDataWorkingVersion, setCardsDataWorkingVersion] = useState([]);
+  const [cardsDataInactive, setCardsDataInactive] = useState(
+    dataInactive ? dataInactive : [],
+  );
+  const [cardsDataWorkingVersion, setCardsDataWorkingVersion] = useState(
+    dataWorkingVersion ? dataWorkingVersion : [],
+  );
 
   const [listGroup, setListGroup] = useState('');
   const [listId, setListId] = useState('');
