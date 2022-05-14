@@ -46,9 +46,8 @@ const CoursList = ({ data, getGroup, getId }) => {
   const open = Boolean(anchorEl);
 
   const handleClick = event => {
-    getId(event.currentTarget.id);
-    console.log(event.currentTarget.id);
     setAnchorEl(event.currentTarget);
+    getId(event.currentTarget.id);
   };
 
   const handleClose = event => {
@@ -116,9 +115,9 @@ const CoursList = ({ data, getGroup, getId }) => {
                           },
                         }}
                       >
-                        {options.map(option => (
+                        {options.map((option, index) => (
                           <MenuItem
-                            key={option}
+                            key={index}
                             selected={option === 'Pyxis'}
                             onClick={handleClose}
                           >

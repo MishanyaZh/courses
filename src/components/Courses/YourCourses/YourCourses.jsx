@@ -62,6 +62,7 @@ const YourCourses = () => {
       const unicInactive = cardsDataInactive.find(item => item.id === listId);
       if (!unicInactive) {
         setCardsDataInactive(prevState => [...prevState, ...currentItem]);
+        alert('you moved the course to Nieaktywne group');
         setCardsDataActive(cardsDataActive.filter(item => item.id !== listId));
         setCardsDataWorkingVersion(
           cardsDataWorkingVersion.filter(item => item.id !== listId),
@@ -72,6 +73,7 @@ const YourCourses = () => {
       const unicActive = cardsDataActive.find(item => item.id === listId);
       if (!unicActive) {
         setCardsDataActive(prevState => [...prevState, ...currentItem]);
+        alert('you moved the course to Aktynwne group');
         setCardsDataInactive(
           cardsDataInactive.filter(item => item.id !== listId),
         );
@@ -86,6 +88,7 @@ const YourCourses = () => {
       );
       if (!unicWorkingVersion) {
         setCardsDataWorkingVersion(prevState => [...prevState, ...currentItem]);
+        alert('you moved the course to Wersje robocze group');
         setCardsDataInactive(
           cardsDataInactive.filter(item => item.id !== listId),
         );
@@ -128,25 +131,25 @@ const YourCourses = () => {
         <TabPanel value="1" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
             data={cardsDataActive}
-            handleSortCardsData={handleSortCardsData}
             getGroup={getGroup}
             getId={getId}
+            currentItem={currentItem}
           />
         </TabPanel>
         <TabPanel value="2" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
             data={cardsDataInactive}
-            handleSortCardsData={handleSortCardsData}
             getGroup={getGroup}
             getId={getId}
+            currentItem={currentItem}
           />
         </TabPanel>
         <TabPanel value="3" style={{ padding: '24px 0px 0px 0px' }}>
           <CoursList
             data={cardsDataWorkingVersion}
-            handleSortCardsData={handleSortCardsData}
             getGroup={getGroup}
             getId={getId}
+            currentItem={currentItem}
           />
         </TabPanel>
       </TabContext>
