@@ -9,7 +9,7 @@ import { Badge, Stack } from '@mui/material';
 import { BoxLogo, BoxTitle, HeaderBox } from './Header.styled';
 import logotyp from '../Header/logotyp.svg';
 
-const Header = ({ handleDrawerOpen }) => {
+const Header = ({ handleOpenModal }) => {
   return (
     <>
       <HeaderBox>
@@ -24,7 +24,7 @@ const Header = ({ handleDrawerOpen }) => {
             style={{ marginRight: '24px', cursor: 'pointer' }}
             spacing={3}
             direction="row"
-            onClick={handleDrawerOpen}
+            onClick={handleOpenModal}
           >
             <Badge badgeContent={2} margin-right={24} color="error">
               <EmailIconStyled />

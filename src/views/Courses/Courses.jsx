@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Menu from '../../components/Courses/Menu/Menu';
 import Main from '../../components/Courses/Main/Main';
 import Messages from '../../components/Courses/Messages/Messages';
+import ModalLatestNews from '../../components/Courses/ModalsCourses/ModalLatestNews/ModalLatestNews';
 
 import { CoursesBox, DrawerS, IconButtonDr } from './Courses.styled';
 import Header from '../../components/Courses/Header/Header';
@@ -13,15 +14,22 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 const drawerWidth = 340;
 
 const Courses = () => {
-  const [open, setOpen] = useState(true);
+  const [openDrawer, setOpenDrawer] = useState(true);
 
   const handleDrawerOpen = () => {
-    open ? setOpen(false) : setOpen(true);
+    openDrawer ? setOpenDrawer(false) : setOpenDrawer(true);
   };
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
   return (
     <>
       <CoursesBox>
-        <Header handleDrawerOpen={handleDrawerOpen} />
+        <Header
+          handleOpenModal={handleOpenModal}
+          handleCloseModal={handleCloseModal}
+        />
         <MainBox>
           <Menu />
           <Main />
@@ -32,7 +40,7 @@ const Courses = () => {
             onClick={handleDrawerOpen}
             style={{ width: '32px', height: '32px' }}
           >
-            {open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {openDrawer ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButtonDr>
           <DrawerS
             sx={{
@@ -44,11 +52,15 @@ const Courses = () => {
             }}
             variant="persistent"
             anchor="right"
-            open={open}
+            open={openDrawer}
           >
             <Messages />
           </DrawerS>
         </MainBox>
+        <ModalLatestNews
+          handleCloseModal={handleCloseModal}
+          openModal={openModal}
+        />
       </CoursesBox>
     </>
   );
