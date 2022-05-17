@@ -5,6 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 
 import StatisticsCourseList from '../StatisticsCourseList/StatisticsCourseList';
+import StudentsList from './StudentsList/StudentsList';
 
 import { TabStyled } from '../../Courses/YourCourses/YourCourses.styled';
 
@@ -39,7 +40,7 @@ const StatisticsCourse = () => {
           <StatisticsCourseList />
         </TabPanel>
         <TabPanel value="2">
-          <p>ups empty...</p>
+          <StudentsList />
         </TabPanel>
         <TabPanel value="3">
           <p>ups empty...</p>
