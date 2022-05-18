@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  border: 1px solid black;
-  padding: 5px;
+  width: 758px;
+  color: #37474f;
 `;
 export const Item = styled.li`
+  background: #ffffff;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
   margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid black;
+  padding: 15px;
 `;

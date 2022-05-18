@@ -19,10 +19,10 @@ const StudentsList = () => {
         ) : (
           students.map(student => (
             <Item key={student.id}>
-              <h4>{student.name}</h4>
-              <div>{student.address.city}</div>
-              <div>{student.email}</div>
-              <div>{student.phone}</div>
+              <h3>name: {student.name}</h3>
+              <div>city: {student.address.city}</div>
+              <div>email: {student.email}</div>
+              <div>phone: {student.phone}</div>
             </Item>
           ))
         )}
