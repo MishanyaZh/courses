@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { List, Item } from './StudentsList.styled';
+import { List } from './StudentsList.styled';
+
+import StudentCard from './StudentCard/StudentCard';
 
 const StudentsList = () => {
   const [students, setStudents] = useState([]);
@@ -18,12 +20,13 @@ const StudentsList = () => {
           <div>L o a d i n g . . .</div>
         ) : (
           students.map(student => (
-            <Item key={student.id}>
-              <h3>name: {student.name}</h3>
-              <div>city: {student.address.city}</div>
-              <div>email: {student.email}</div>
-              <div>phone: {student.phone}</div>
-            </Item>
+            <StudentCard
+              key={student.id}
+              name={student.name}
+              city={student.address.city}
+              email={student.email}
+              phone={student.phone}
+            />
           ))
         )}
       </List>
