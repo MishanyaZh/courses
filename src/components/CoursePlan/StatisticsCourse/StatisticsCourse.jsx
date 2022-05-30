@@ -20,7 +20,7 @@ const StatisticsCourse = () => {
     <Box
       sx={{
         width: '100%',
-        minWidth: '758px',
+        // minWidth: '758px',
         minHeight: '868px',
       }}
     >

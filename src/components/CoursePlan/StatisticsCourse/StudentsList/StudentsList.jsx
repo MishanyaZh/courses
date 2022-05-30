@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { List } from './StudentsList.styled';
+import Grid from '@mui/material/Grid';
 
 import StudentCard from './StudentCard/StudentCard';
 
@@ -16,19 +17,21 @@ const StudentsList = () => {
   return (
     <>
       <List>
-        {students.length === 0 ? (
-          <div>L o a d i n g . . .</div>
-        ) : (
-          students.map(student => (
-            <StudentCard
-              key={student.id}
-              name={student.name}
-              city={student.address.city}
-              email={student.email}
-              phone={student.phone}
-            />
-          ))
-        )}
+        <Grid container spacing={2}>
+          {students.length === 0 ? (
+            <div>L o a d i n g . . .</div>
+          ) : (
+            students.map(student => (
+              <StudentCard
+                key={student.id}
+                name={student.name}
+                city={student.address.city}
+                email={student.email}
+                phone={student.phone}
+              />
+            ))
+          )}
+        </Grid>
       </List>
     </>
   );
