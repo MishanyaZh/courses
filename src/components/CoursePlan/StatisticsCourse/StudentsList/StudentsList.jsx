@@ -28,6 +28,7 @@ const StudentsList = () => {
                 city={student.address.city}
                 email={student.email}
                 phone={student.phone}
+                bgcolor={'rgba(0, 172, 193, 1)'}
               />
             ))
           )}

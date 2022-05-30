@@ -6,11 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-const StudentCard = ({ name, city, email, phone }) => {
+const StudentCard = ({ name, city, email, phone, bgcolor }) => {
   return (
     <>
       <Grid item xs={12} sm={12} md={6} lg={6}>
-        <Card sx={{ maxWidth: 370 }}>
+        <Card sx={{ maxWidth: 370 }} style={{ background: `${bgcolor}` }}>
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -40,4 +40,9 @@ StudentCard.propTypes = {
   city: PropTypes.string,
   email: PropTypes.string,
   phone: PropTypes.string,
+  bgcolor: PropTypes.oneOf([
+    'rgba(0, 172, 193, 1)',
+    'rgba(176, 190, 197, 0.5)',
+    'none',
+  ]),
 };
