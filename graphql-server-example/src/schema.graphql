@@ -1,0 +1,15 @@
+type Query {
+  students: Students
+}
+
+type Students {
+  id: ID!
+  name: String!
+  address: [Address]!
+  email: String!
+  phone: String!
+}
+
+type Address {
+  city: String!
+}
