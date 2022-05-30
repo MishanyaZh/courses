@@ -5,6 +5,21 @@ import Grid from '@mui/material/Grid';
 
 import StudentCard from './StudentCard/StudentCard';
 
+// import { useQuery, gql } from '@apollo/client';
+
+// const Students_QUERY = gql`
+//   {
+//     students {
+//       id
+//       name
+//       email
+//       phone
+//       address {
+//         city
+//       }
+//     }
+//   }
+// `;
 const StudentsList = () => {
   const [students, setStudents] = useState([]);
 
@@ -13,6 +28,9 @@ const StudentsList = () => {
       .then(response => response.json())
       .then(json => setStudents(json));
   }, []);
+
+  // const { loading, error, data } = useQuery(Students_QUERY);
+  // console.log(data);
 
   return (
     <>

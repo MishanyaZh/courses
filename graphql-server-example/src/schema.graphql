@@ -3,13 +3,13 @@ type Query {
 }
 
 type Students {
-  id: ID!
-  name: String!
-  address: [Address]!
-  email: String!
-  phone: String!
+  id: ID
+  name: String
+#   address: [Address]
+  email: String
+  phone: String
 }
 
-type Address {
-  city: String!
-}
+# type Address {
+#   city: String
+# }
