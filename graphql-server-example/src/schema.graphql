@@ -1,11 +1,11 @@
 type Query {
-  students: Students
+  students: [Students]
 }
 
 type Students {
   id: ID
   name: String
-#   address: [Address]
+  address: String
   email: String
   phone: String
 }
